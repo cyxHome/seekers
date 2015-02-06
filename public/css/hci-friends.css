@@ -1,0 +1,222 @@
+/* applies to anything of class "example-class-selector" */
+body {
+    background-image: url("http://i58.tinypic.com/155jq05.jpg");
+    background-repeat: no-repeat;
+    background-position: 0px -100px;
+    background-attachment: fixed;
+}
+
+.friend {
+	margin-top: 2em;
+}
+
+.friend img {
+	width: 200px;
+}
+
+.anagrams {
+	text-decoration: none;
+}
+
+/* applies to any <p> descendants of an element of class "example-class-selector" */
+.example-class-selector p {
+	/* Colors are in hexadecimal: http://www.colorpicker.com/ */	
+	color: #CC00AA;
+}
+
+h5 {
+	color: #8382BF;
+}
+
+h1 {
+  margin-top: 100px;
+  margin-bottom: 10px;
+  font-family: Bitter, serif;
+  font-size: 120px;
+  line-height: 47px;
+  font-weight: 700;
+  text-align: center;
+  text-shadow: none;
+  color: #ffffff;
+}
+
+h2 {
+  margin-top: 20px;
+  margin-bottom: 50px;
+  font-family: Montserrat, sans-serif;
+  font-size: 24px;
+  line-height: 44px;
+  font-weight: 400;
+  text-align: center;
+  text-shadow: none;
+  color: #ffffff;
+}
+
+h3 {
+  margin-top: 0px;
+  margin-bottom: 5px;
+  float: none;
+  color: #5f5f5f;
+  font-size: 24px;
+  line-height: 26px;
+  font-weight: 700;
+  text-align: left;
+  text-shadow: none;
+}
+
+h4 {
+  margin-top: 0px;
+  margin-bottom: 7px;
+  color: #5f5f5f;
+  font-size: 18px;
+  line-height: 20px;
+  font-style: italic;
+  font-weight: 400;
+  text-shadow: none;
+}
+
+.navbar {
+  background-color: #eeeeee;
+  margin-bottom: 0px;
+  border-radius: 0px;
+}
+
+.nav-link {
+  display: inline-block;
+  padding: 20px;
+  color: #4097ab;
+  float: right;
+  position: relative;
+}
+
+.nav-link a {
+  font-family:'Droid Sans', sans-serif;
+  color: #b0b0b0;
+  font-weight: 400;
+}
+
+.nav-link a:hover {
+  color: #4097ab;
+  text-decoration: none;
+}
+
+.buttons {
+  position: static;
+  left: 0px;
+  top: 0px;
+  display: block;
+  width: auto;
+  height: 50px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 0%;
+  padding-left: 0%;
+  float: none;
+  text-align: center;
+}
+
+.button {
+  display: block;
+  width: 200px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 5px 15px;
+  float: none;
+  border: 2px solid #ffffff;
+  border-radius: 5px;
+  background-color: transparent;
+  font-family:'Droid Sans', sans-serif;
+  color: #ffffff;
+  font-size: 18px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.button:hover {
+  opacity: 0.5;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.solid-btn {
+  display: block;
+  width: 200px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 5px 15px;
+  float: none;
+  border: 2px solid #56aabb;
+  border-radius: 5px;
+  background-color: #56aabb;
+  font-family:'Droid Sans', sans-serif;
+  color: #ffffff;
+  font-size: 18px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.solid-btn:hover {
+  opacity: 0.5;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.add-post {
+  display: block;
+  width: 600px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 15px;
+  padding: 5px 15px;
+  float: none;
+  border: 0px;
+  background-color: #1c4e6b;
+  font-family:'Droid Sans', sans-serif;
+  color: #ffffff;
+  font-size: 14px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.add-post:hover {
+  background-color: #41718e;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.post {
+  display: block;
+  width: 600px;
+  height: auto;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 15px;
+  padding: 10px;
+  float: none;
+  border: 0px solid #8f8f8f;
+  border-radius: 5px;
+  font-family:'Droid Sans', sans-serif;
+  background-color: #ffffff;
+  opacity: 0.9;
+  color: #000000;;
+  font-size: 14px;
+  text-align: left;
+  text-decoration: none;
+}
+
+.post-images {
+  margin-right: 15px;
+  margin-bottom: 10px;
+  overflow: hidden;
+  height: 350px;
+  width: 580px;
+}
+
+.img-responsive {
+  position: relative;
+  width: 580px !important;
+}
+
+.title {
+	padding-top: 60px;
+}
