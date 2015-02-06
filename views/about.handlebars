@@ -22,32 +22,29 @@
 <body>
 	<div class="contain">
 		<div class="navbar">
-			<div class="nav-link"><a href="/about">About</a></div>
+			<div class="nav-link">About</div>
 			<div class="nav-link"><a href="/found">Found</a></div>
-			<div class="nav-link">Lost</div>
+			<div class="nav-link"><a href="/lost">Lost</a></div>
 			<div class="nav-link"><a href="/">Home</a></div>
 			<div class="navbar-brand"><img src="http://i57.tinypic.com/wbf4nl.jpg"></div>
 		</div>
 
 		<div class="title">
+			<h1>seeker.</h1>
+			<h2>YOUR TRITON LOST & FOUND</h2>
+
 			<div class="buttons">
-				<a class="add-post" href="/post">Create Post [+]</a>
+				<i>Welcome to the UCSD Seeker app.</i><br><br>
+
+				This application aims to connect students who have lost or found<br>
+				items on campus. By providing a centralized location for posting about<br>
+				missing items, we can <b>minimize search times</b> for busy UCSD students.<br><br>
+
+				Navigate our site using the tabs in the bar above.<br>
+				The <b>Lost</b> button will bring you to posts regarding recently lost items.<br>
+				Similarly, the <b>Found</b> button will bring up posts about recently found items.<br>
+				Use the <b>Search</b> feature if you are looking for something specific.
 			</div>
-
-			{{#each posts}}
-				<div class="post">
-					<div class="post-images">
-						<img src="{{imageURL}}" class="img-responsive">
-					</div>
-
-					<h3>{{title}}</h3>
-					<h4>Posted {{date}} at {{time}}</h4>
-
-					<p>{{description}}</p>
-
-					<i>For more information, contact <a href="/userprofile">{{author}}</a>.</i>
-				</div>
-			{{/each}}
 		</div>
 	</div>
 
