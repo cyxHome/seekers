@@ -2,7 +2,8 @@
 body {
     background-image: url("http://i58.tinypic.com/155jq05.jpg");
     background-repeat: no-repeat;
-    background-position: 0px -100px;
+    background-position: center;
+    background-size: 100% 100%;
     background-attachment: fixed;
 }
 
@@ -220,4 +221,8 @@ h4 {
 
 .title {
 	padding-top: 60px;
+}
+
+.losing-items {
+  padding-top: 60px;
 }
