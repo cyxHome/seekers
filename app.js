@@ -3,6 +3,8 @@
  * Module dependencies.
  */
 
+ 
+
 var express = require('express');
 var http = require('http');
 var path = require('path');
@@ -12,6 +14,8 @@ var index = require('./routes/index');
 var lost = require('./routes/lost');
 var found = require('./routes/found');
 var about = require('./routes/about');
+// var test = require('./routes/test');
+// var offcanvas = require('./routes/offcanvas');
 
 var app = express();
 
@@ -40,6 +44,9 @@ app.get('/', index.view);
 app.get('/lost', lost.view);
 app.get('/found', found.view);
 app.get('/about', about.view);
+// app.get('/test', test.view);
+// app.get('/offcanvas', offcanvas.view);
+
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

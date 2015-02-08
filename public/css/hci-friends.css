@@ -1,11 +1,18 @@
 /* applies to anything of class "example-class-selector" */
 body {
     background-image: url("http://i58.tinypic.com/155jq05.jpg");
+    /*background-color: #eeeeee;*/
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100% 100%;
     background-attachment: fixed;
+
 }
+      
+pre {
+    tab-size: 8;
+}
+	
 
 .friend {
 	margin-top: 2em;
@@ -33,7 +40,7 @@ h1 {
   margin-top: 100px;
   margin-bottom: 10px;
   font-family: Bitter, serif;
-  font-size: 120px;
+  font-size: 100px;
   line-height: 47px;
   font-weight: 700;
   text-align: center;
@@ -82,13 +89,68 @@ h4 {
   border-radius: 0px;
 }
 
-.nav-link {
+/*/dfdfd*/
+.navbar-nav {
   display: inline-block;
-  padding: 20px;
+  padding: 10px;
   color: #4097ab;
-  float: right;
+  float: center;
   position: relative;
 }
+
+.navbar-toggle {
+position: relative;
+float: none;
+margin-top: 0px;
+margin-right: 0px;
+margin-bottom: 0px;
+padding: 9px 10px;
+background-color: transparent;
+background-image: none;
+border: 1px solid transparent;
+border-radius: 4px;
+}
+
+.navbar-toggle:hover {
+position: relative;
+float: none;
+margin-top: 0px;
+margin-right: 0px;
+margin-bottom: 0px;
+padding: 9px 10px;
+background-color: transparent;
+background-image: none;
+border: 1px solid transparent;
+border-radius: 4px;
+}
+
+
+.navbar-nav a {
+   font-family:'Droid Sans', sans-serif;
+   color: #b0b0b0;
+   font-weight: 400;
+}
+
+.navbar-nav a:hover {
+  color: #4097ab;
+  text-decoration: none;
+}
+
+.nav-link {
+  display: inline-block;
+  padding: 10px;
+  color: #4097ab;
+  float: none;
+  position: relative;
+}
+
+.navbar-right {
+  float: right;
+  padding-top: 17px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 
 .nav-link a {
   font-family:'Droid Sans', sans-serif;
@@ -226,3 +288,21 @@ h4 {
 .losing-items {
   padding-top: 60px;
 }
+
+.front-page-search {
+  display: block;
+  width: 200px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 5px 15px;
+  float: none;
+  border: 2px solid #ffffff;
+  border-radius: 5px;
+  background-color: transparent;
+  font-family:'Droid Sans', sans-serif;
+  color: #ffffff;
+  font-size: 18px;
+  text-align: center;
+  text-decoration: none;
+}
+
