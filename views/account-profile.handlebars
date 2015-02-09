@@ -22,6 +22,8 @@
 
     <link href="css/hci-friends.css" rel="stylesheet">
 
+    <link href="css/account-profile.css" rel="stylesheet">
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -45,10 +47,10 @@
                     <a href="#">
                     </a>
                 </li>
-                    <li class = "current"><a href="/logined-index">Home Page</a></li>
-                    <li><a href="/logined-found">Found Gallery</a></li>
-                    <li><a href="/logined-lost">Lost Gallery</a></li>
-                    <li><a href="/logined-about">About This App</a></li>
+                    <li class = "current"><a href="/">Home Page</a></li>
+                    <li><a href="/found">Found Gallery</a></li>
+                    <li><a href="/lost">Lost Gallery</a></li>
+                    <li><a href="/about">About This App</a></li>
 
             </ul>
         </div>
@@ -72,11 +74,9 @@
 						</div>
 
 						
-						
 						<div class="container navbar-right nav-link dropdown col-md-3 menu-close">
 
 							<a class = "dropdown-toggle" data-toggle = "dropdown">Account <span class="glyphicon glyphicon-user" aria-hidden="true"></span></a>
-							
 							<!-- <div class = "container"> -->
 							<ul class = "dropdown-menu 'pull-right'">
 							
@@ -113,72 +113,90 @@
         	<div  class = "page-table">
 
 	        	<div class = "page-cell">
-					<div class="container menu-close">
-<!-- the above are navigation bars -->
-<!-- all page content start here -->
-					
-						<p class = "post-form-title"> I have lost something <p>
-						<div class="input-group input-group-md">
-						  <span class="input-group-addon" id="sizing-addon2">what</span>
-						  <input type="text" class="form-control" placeholder="bottle/skateboard/student id..." aria-describedby="sizing-addon1">
-						</div>
-						<br>
+					<div class="contain menu-close">
 
-						<div class="input-group input-group-md">
-						  <span class="input-group-addon" id="sizing-addon2">where</span>
-						  <input type="text" class="form-control" placeholder="Geisel library/ERC/..."  aria-describedby="sizing-addon1">
-						</div>
-						<br>
+<!-- page content start here -->
+
+						<div class="container">
+						      <div class="row">
+							      <div class="col-md-5  toppad  pull-right col-md-offset-3 ">
+							  		<br>
+							      </div>
+						        
+						          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
+						   
+						   
+						          <div class="panel panel-info">
+							            <div class="panel-heading">
+
+							            	<span class="pull-right">
+							                     <a href="/account-profile-edit" data-original-title="Edit this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-edit"></i></a>
+							                </span>
+
+							              <h3 class="panel-title">Sheena Kristin A.Eschor</h3>
+							            </div>
+							            <div class="panel-body">
+							              <div class="row">
+							                <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=100" class="img-circle"> </div>
+							                
+							                <div class=" col-md-9 col-lg-9 "> 
+							                  <table class="table table-user-information">
+							                    <tbody>
+
+	<!-- profile content start here -->
+							                      <tr>
+							                        <td>Email</td>
+							                        <td><a href="mailto:info@support.com">info@support.com</a></td>
+							                      </tr>
+												
+												  <tr>
+							                        <td>Phone Number</td>
+							                        <td>555-4567-890(Mobile)</td>
+												  </tr>
+							                      
+							                      <tr>
+							                        <td>Other contact information</td>
+							                        <td><a href="mailto:info@support.com">facebook: *****</a></td>
+							                      </tr>
+							                     
+							                      <tr>
+							                        <td>Post</td>
+							                        <td><a href = "/account-mypost">4</a></td>
+							                      </tr>
+
+							                     
+
+	<!-- profile content end here -->
+
+							                    </tbody>
+							                  </table>
+							                  
+
+							                </div>
+							              </div>
+						            	</div>
+						            
+						          </div>
+						        </div>
+						      </div>
 
 
-						<div class="input-group input-group-md">
-						  <span class="input-group-addon" id="sizing-addon2">when</span>
-						  <input type="text" class="form-control" placeholder="2/8 at Afternoon"  aria-describedby="sizing-addon1">
-						</div>
-						<br>
-<!-- 
-						<div class="input-group input-group-md" style="width: 100%;">
-							
-						</div>
-						<br> -->
-
-						<form>
-						  <div class="form-group">
-						    <label for="exampleInputEmail1">Description</label>
-						    <textarea class="form-control" placeholder="Say something..." style="margin: 0px; width: 100%; border-radius: 4px;"></textarea>
-						  </div>
-
-
-						  <!-- upload picture -->
-						  <div class="form-group">
-						    <label for="exampleInputFile">Image of the Item</label>
-						    <input type="file" id="exampleInputFile">
-						    <p class="help-block">Example block-level help text here.</p>
-						  </div>
-
-						  <!-- submit button -->
-						  <div class = "row">
-						  	<div class = "col-xs-2">
-						  	</div>
-
-						  	<div class = "col-xs-4">
-						  		<button type="submit" class="btn btn-default"><a href = "/logined-index" class = "post-cancel">Cancel</a></button>
-						  	</div>
-
-						  	<div class = "col-xs-4">
-						  		<button type="submit" class="btn btn-primary">Submit</button>
-						  	</div>
-
-						  	<div class = "col-xs-2">
-						  	</div>
-						  </div>
-						</form>
-
-				
 
 
 
-<!-- all page content end here -->
+
+
+
+
+
+
+
+
+
+
+<!-- page content end here -->
+
+
 					</div> 
 				</div>
 

@@ -45,10 +45,11 @@
                     <a href="#">
                     </a>
                 </li>
-                    <li class = "current"><a href="/logined-index">Home Page</a></li>
-                    <li><a href="/logined-found">Found Gallery</a></li>
-                    <li><a href="/logined-lost">Lost Gallery</a></li>
-                    <li><a href="/logined-about">About This App</a></li>
+
+                <li><a href="/logined-index">Home Page</a></li>
+                <li><a href="/logined-found">Found Gallery</a></li>
+                <li><a href="/logined-lost">Lost Gallery</a></li>
+                <li class = "current"><a href="/logined-about">About This App</a></li>
 
             </ul>
         </div>
@@ -71,8 +72,7 @@
 							</button>
 						</div>
 
-						
-						
+
 						<div class="container navbar-right nav-link dropdown col-md-3 menu-close">
 
 							<a class = "dropdown-toggle" data-toggle = "dropdown">Account <span class="glyphicon glyphicon-user" aria-hidden="true"></span></a>
@@ -84,7 +84,7 @@
 								<li><a href="/account-message">Mail <span class="badge">4</span></a></li>
 								<li><a href="/account-mypost">My Post</a></li>
 								<li><a href="/account-profile">Profile</a></li>
-								<li><a href = "/">Logout</a></li>
+								<li><a href = "/about">Logout</a></li>
 
 							</ul>
 							<!-- </div> -->
@@ -93,14 +93,14 @@
 
 						<div class="container navbar-right nav-link dropdown col-md-3 menu-close">
 
-							<a class = "dropdown-toggle" data-toggle = "dropdown">New Post <span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
+						<a href="#" class = "dropdown-toggle" data-toggle = "dropdown">New Post <span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
 
-							<ul class = "dropdown-menu">
-							
-								<li><a href="/post-found">I Just Found</a></li>
-								<li><a href = "/post-lost">I Just Lost...</a></li>
+						<ul class = "dropdown-menu">
+						
+							<li><a href="/post-found">I Just Found</a></li>
+							<li><a href = "/post-lost">I Just Lost...</a></li>
 
-							</ul>
+						</ul>
 
 
 						</div>
@@ -113,73 +113,33 @@
         	<div  class = "page-table">
 
 	        	<div class = "page-cell">
-					<div class="container menu-close">
+					<div class="container menu-close"> 
 <!-- the above are navigation bars -->
 <!-- all page content start here -->
-					
-						<p class = "post-form-title"> I have lost something <p>
-						<div class="input-group input-group-md">
-						  <span class="input-group-addon" id="sizing-addon2">what</span>
-						  <input type="text" class="form-control" placeholder="bottle/skateboard/student id..." aria-describedby="sizing-addon1">
+
+						<div class="title">
+							<h1>seeker.</h1>
+							<h2>YOUR TRITON LOST & FOUND</h2>
+
+
+							<div class="container about-paragraphs">
+								<i>Welcome to the UCSD Seeker app.</i><br><br>
+
+								This application aims to connect students who have lost or found<br>
+								items on campus. By providing a centralized location for posting about<br>
+								missing items, we can <b>minimize search times</b> for busy UCSD students.<br><br>
+
+								Navigate our site using the tabs in the bar above.<br>
+								The <b>Lost</b> button will bring you to posts regarding recently lost items.<br>
+								Similarly, the <b>Found</b> button will bring up posts about recently found items.<br>
+								Use the <b>Search</b> feature if you are looking for something specific.
+							</div>
+
 						</div>
-						<br>
-
-						<div class="input-group input-group-md">
-						  <span class="input-group-addon" id="sizing-addon2">where</span>
-						  <input type="text" class="form-control" placeholder="Geisel library/ERC/..."  aria-describedby="sizing-addon1">
-						</div>
-						<br>
-
-
-						<div class="input-group input-group-md">
-						  <span class="input-group-addon" id="sizing-addon2">when</span>
-						  <input type="text" class="form-control" placeholder="2/8 at Afternoon"  aria-describedby="sizing-addon1">
-						</div>
-						<br>
-<!-- 
-						<div class="input-group input-group-md" style="width: 100%;">
-							
-						</div>
-						<br> -->
-
-						<form>
-						  <div class="form-group">
-						    <label for="exampleInputEmail1">Description</label>
-						    <textarea class="form-control" placeholder="Say something..." style="margin: 0px; width: 100%; border-radius: 4px;"></textarea>
-						  </div>
-
-
-						  <!-- upload picture -->
-						  <div class="form-group">
-						    <label for="exampleInputFile">Image of the Item</label>
-						    <input type="file" id="exampleInputFile">
-						    <p class="help-block">Example block-level help text here.</p>
-						  </div>
-
-						  <!-- submit button -->
-						  <div class = "row">
-						  	<div class = "col-xs-2">
-						  	</div>
-
-						  	<div class = "col-xs-4">
-						  		<button type="submit" class="btn btn-default"><a href = "/logined-index" class = "post-cancel">Cancel</a></button>
-						  	</div>
-
-						  	<div class = "col-xs-4">
-						  		<button type="submit" class="btn btn-primary">Submit</button>
-						  	</div>
-
-						  	<div class = "col-xs-2">
-						  	</div>
-						  </div>
-						</form>
-
-				
-
-
 
 <!-- all page content end here -->
-					</div> 
+
+					</div>
 				</div>
 
 			</div>
@@ -192,14 +152,21 @@
 
 
 
-
 	<script src="/js/jquery-1.11.0.js"></script>
 	<script src="js/bootstrap.min.js"></script>
-    <script src="/js/hci-friends.js"></script>
+	<script src="/js/hci-friends.js"></script>
 
 
 
 </body>
 
 
+
+
 </html>
+
+
+
+
+
+

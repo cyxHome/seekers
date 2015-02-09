@@ -45,10 +45,10 @@
                     <a href="#">
                     </a>
                 </li>
-                    <li class = "current"><a href="/logined-index">Home Page</a></li>
-                    <li><a href="/logined-found">Found Gallery</a></li>
-                    <li><a href="/logined-lost">Lost Gallery</a></li>
-                    <li><a href="/logined-about">About This App</a></li>
+                    <li class = "current"><a href="/">Home Page</a></li>
+                    <li><a href="/found">Found Gallery</a></li>
+                    <li><a href="/lost">Lost Gallery</a></li>
+                    <li><a href="/about">About This App</a></li>
 
             </ul>
         </div>
@@ -72,11 +72,9 @@
 						</div>
 
 						
-						
 						<div class="container navbar-right nav-link dropdown col-md-3 menu-close">
 
 							<a class = "dropdown-toggle" data-toggle = "dropdown">Account <span class="glyphicon glyphicon-user" aria-hidden="true"></span></a>
-							
 							<!-- <div class = "container"> -->
 							<ul class = "dropdown-menu 'pull-right'">
 							
@@ -113,27 +111,28 @@
         	<div  class = "page-table">
 
 	        	<div class = "page-cell">
-					<div class="container menu-close">
+					<div class="container menu-close account-edit-profile-group">
 <!-- the above are navigation bars -->
 <!-- all page content start here -->
 					
-						<p class = "post-form-title"> I have lost something <p>
+
 						<div class="input-group input-group-md">
-						  <span class="input-group-addon" id="sizing-addon2">what</span>
-						  <input type="text" class="form-control" placeholder="bottle/skateboard/student id..." aria-describedby="sizing-addon1">
+						  <span class="input-group-addon" id="sizing-addon2">UserName</span>
+						  <input type="text" class="form-control" placeholder="Michael Jordan" aria-describedby="sizing-addon1">
 						</div>
 						<br>
 
 						<div class="input-group input-group-md">
-						  <span class="input-group-addon" id="sizing-addon2">where</span>
-						  <input type="text" class="form-control" placeholder="Geisel library/ERC/..."  aria-describedby="sizing-addon1">
+
+						  <span class="input-group-addon" id="sizing-addon2">Email</span>
+						  <input type="text" class="form-control" placeholder="you@example.com"  aria-describedby="sizing-addon1">
 						</div>
 						<br>
 
-
 						<div class="input-group input-group-md">
-						  <span class="input-group-addon" id="sizing-addon2">when</span>
-						  <input type="text" class="form-control" placeholder="2/8 at Afternoon"  aria-describedby="sizing-addon1">
+
+						  <span class="input-group-addon" id="sizing-addon2">Phone</span>
+						  <input type="text" class="form-control" placeholder="123-231-2321"  aria-describedby="sizing-addon1">
 						</div>
 						<br>
 <!-- 
@@ -144,14 +143,15 @@
 
 						<form>
 						  <div class="form-group">
-						    <label for="exampleInputEmail1">Description</label>
-						    <textarea class="form-control" placeholder="Say something..." style="margin: 0px; width: 100%; border-radius: 4px;"></textarea>
+						    <label for="exampleInputEmail1">Other contact information</label>
+						    <textarea class="form-control" placeholder="facebook/twitter/..." style="margin: 0px; width: 100%; border-radius: 4px;"></textarea>
 						  </div>
+
 
 
 						  <!-- upload picture -->
 						  <div class="form-group">
-						    <label for="exampleInputFile">Image of the Item</label>
+						    <label for="exampleInputFile">Profile picture</label>
 						    <input type="file" id="exampleInputFile">
 						    <p class="help-block">Example block-level help text here.</p>
 						  </div>
@@ -162,7 +162,7 @@
 						  	</div>
 
 						  	<div class = "col-xs-4">
-						  		<button type="submit" class="btn btn-default"><a href = "/logined-index" class = "post-cancel">Cancel</a></button>
+						  		<button type="submit" class="btn btn-default"><a href = "/account-profile">Cancel</button>
 						  	</div>
 
 						  	<div class = "col-xs-4">
@@ -192,6 +192,123 @@
 
 
 
+<!-- Login form start here -->
+
+
+	<div class = "modal fade" id = "login" role = "dialog">
+		<div class = "modal-dialog">
+			<div class = "modal-content">
+				<form class = "form-horizontal">
+					<div class = "modal-header">
+						<h4>Welcome to Seeker!</h4>
+					</div>
+
+
+					<div class = "modal-body">
+
+						<div class = "form-group">
+
+							<label for = "login-name" class = "col-lg-2 control-label">Username:</label>
+							<div class = "col-lg-10">
+
+								<input type = "text" class = "form-contol" id = "login-name" placeholder = "Phone,email or username">
+							</div>
+						</div>
+
+						<div class = "form-group">
+
+							<label for = "login-password" class = "col-lg-2 control-label">Password:</label>
+							<div class = "col-lg-10">
+
+								<input type = "text" class = "form-contol" id = "login-password" placeholder = "Password">
+							</div>
+						</div>
+
+					</div>
+
+
+					<div class = "modal-footer">
+						<a class = "btn btn-success pull-left" type = "submit" data-dismiss = "modal" href="#sign-up" data-toggle="modal">Sign up now</a>
+						<a class = "btn btn-default" data-dismiss = "modal">Close</a>
+						<a class = "btn btn-primary" type = "submit">Login</a>
+					</div>
+
+				</form>
+
+
+			</div>
+		</div>
+	</div>
+
+
+
+
+	<div class = "modal fade" id = "sign-up" role = "dialog">
+		<div class = "modal-dialog">
+			<div class = "modal-content">
+				<form class = "form-horizontal">
+					<div class = "modal-header">
+						<h4>Welcome to Seeker!</h4>
+					</div>
+
+
+					<div class = "modal-body">
+
+						<div class = "form-group">
+
+							<label for = "sign-up-name" class = "col-lg-2 control-label">Username:</label>
+							<div class = "col-lg-10">
+
+								<input type = "text" class = "form-contol" id = "sign-up-name" placeholder = "username">
+							</div>
+						</div>
+
+						<div class = "form-group">
+
+							<label for = "sign-up-email" class = "col-lg-2 control-label">Email:</label>
+							<div class = "col-lg-10">
+
+								<input type = "text" class = "form-contol" id = "sign-up-email" placeholder = "you@example.com">
+							</div>
+						</div>
+
+
+
+						<div class = "form-group">
+
+							<label for = "sign-up-password" class = "col-lg-2 control-label">Password:</label>
+							<div class = "col-lg-10">
+
+								<input type = "text" class = "form-contol" id = "sign-up-password" placeholder = "Password">
+							</div>
+						</div>
+
+						<div class = "form-group">
+
+							<label for = "sign-up-password-confirm" class = "col-lg-2 control-label">Confirm Password:</label>
+							<div class = "col-lg-10">
+
+								<input type = "text" class = "form-contol" id = "sign-up-password-confirm" placeholder = "Confirm Password">
+							</div>
+						</div>
+
+					</div>
+
+
+					<div class = "modal-footer">
+						<a class = "btn btn-default" data-dismiss = "modal">Close</a>
+						<a class = "btn btn-primary" type = "submit">Creat Account</a>
+					</div>
+
+				</form>
+
+
+			</div>
+		</div>
+	</div>
+
+
+<!-- Login form end here -->
 
 	<script src="/js/jquery-1.11.0.js"></script>
 	<script src="js/bootstrap.min.js"></script>
