@@ -5,6 +5,18 @@ $(document).ready(function() {
 	initializePage();
 });
 
+
+ // Menu Toggle Script 
+
+$("#menu-toggle").click(function(e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("toggled");
+});
+
+$(".menu-close").click(function(e) {
+    $("#wrapper").removeClass("toggled");
+});
+
 /*
  * Function that is called when the document is ready.
  */

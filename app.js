@@ -14,6 +14,8 @@ var index = require('./routes/index');
 var lost = require('./routes/lost');
 var found = require('./routes/found');
 var about = require('./routes/about');
+var postfound = require('./routes/post-found');
+var postlost = require('./routes/post-lost');
 // var test = require('./routes/test');
 // var offcanvas = require('./routes/offcanvas');
 
@@ -44,6 +46,8 @@ app.get('/', index.view);
 app.get('/lost', lost.view);
 app.get('/found', found.view);
 app.get('/about', about.view);
+app.get('/post-found', postfound.view)
+app.get('/post-lost', postlost.view)
 // app.get('/test', test.view);
 // app.get('/offcanvas', offcanvas.view);
 
