@@ -1,10 +1,20 @@
 /* applies to anything of class "example-class-selector" */
 body {
     background-image: url("http://i58.tinypic.com/155jq05.jpg");
+    /*background-color: #eeeeee;*/
     background-repeat: no-repeat;
-    background-position: 0px -100px;
+    background-position: center;
+    background-size: 100% 100%;
+    width: 100%;
+    height: 100%;
     background-attachment: fixed;
+
 }
+      
+pre {
+    tab-size: 8;
+}
+	
 
 .friend {
 	margin-top: 2em;
@@ -32,7 +42,7 @@ h1 {
   margin-top: 100px;
   margin-bottom: 10px;
   font-family: Bitter, serif;
-  font-size: 120px;
+  font-size: 100px;
   line-height: 47px;
   font-weight: 700;
   text-align: center;
@@ -81,13 +91,68 @@ h4 {
   border-radius: 0px;
 }
 
-.nav-link {
+/*/dfdfd*/
+.navbar-nav {
   display: inline-block;
-  padding: 20px;
+  padding: 10px;
   color: #4097ab;
-  float: right;
+  float: center;
   position: relative;
 }
+
+.navbar-toggle {
+position: relative;
+float: none;
+margin-top: 0px;
+margin-right: 0px;
+margin-bottom: 0px;
+padding: 9px 10px;
+background-color: transparent;
+background-image: none;
+border: 1px solid transparent;
+border-radius: 4px;
+}
+
+.navbar-toggle:hover {
+position: relative;
+float: none;
+margin-top: 0px;
+margin-right: 0px;
+margin-bottom: 0px;
+padding: 9px 10px;
+background-color: transparent;
+background-image: none;
+border: 1px solid transparent;
+border-radius: 4px;
+}
+
+
+.navbar-nav a {
+   font-family:'Droid Sans', sans-serif;
+   color: #b0b0b0;
+   font-weight: 400;
+}
+
+.navbar-nav a:hover {
+  color: #4097ab;
+  text-decoration: none;
+}
+
+.nav-link {
+  display: inline-block;
+  padding: 10px;
+  color: #4097ab;
+  float: none;
+  position: relative;
+}
+
+.navbar-right {
+  float: right;
+  padding-top: 17px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 
 .nav-link a {
   font-family:'Droid Sans', sans-serif;
@@ -218,6 +283,105 @@ h4 {
   width: 580px !important;
 }
 
-.title {
-	padding-top: 60px;
+/*.title {*/
+/*	padding-top: 60px;
+}*/
+
+.losing-items {
+  padding-top: 60px;
 }
+
+.front-page-search {
+  display: block;
+  width: 200px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 5px 15px;
+  float: none;
+  border: 2px solid #ffffff;
+  border-radius: 5px;
+  background-color: transparent;
+  font-family:'Droid Sans', sans-serif;
+  color: #ffffff;
+  font-size: 18px;
+  text-align: center;
+  text-decoration: none;
+}
+
+
+.page-table {
+    display: table;
+    height: 100%;
+    margin-top: -55px;
+    width: 100%;
+}
+
+.page-cell {
+    margin-top: 50px;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.post-form-description {
+position: relative;
+z-index: 2;
+float: left;
+width: 100%;
+margin-bottom: 0;
+border-radius: 4px;
+}
+
+.post-form-title {
+  margin-top: 50px;
+  /* margin-bottom: 50px; */
+  font-family: Montserrat, sans-serif;
+  font-size: 24px;
+  line-height: 44px;
+  font-weight: 400;
+  text-align: center;
+  text-shadow: none;
+  color: #ffffff;
+}
+
+.verticalLine {
+    display: block;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    border-style: inset;
+    border-width: 1px;
+}
+
+.dropdown-menu {
+
+  min-width: 85px;
+}
+
+.dropdown-menu li a {
+    padding: 3px 10px;
+}
+
+.my-post {
+      margin-top: 70px;
+}
+
+.small-text {
+    font-size: 8px;
+}
+
+.glyphicon-pencil {
+  color: black;
+  }
+
+.glyphicon-trash {
+  color: red;
+}
+
+.account-edit-profile-group {
+  margin-top: 55px;
+}
+
+/*.post-cancel {
+  color: black;
+}*/
