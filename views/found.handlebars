@@ -45,8 +45,8 @@
                     <a href="#">
                     </a>
                 </li>
-                    <li class = "current"><a href="/">Home Page</a></li>
-                    <li><a href="/found">Found Gallery</a></li>
+                    <li><a href="/">Home Page</a></li>
+                    <li class = "current"><a href="/found">Found Gallery</a></li>
                     <li><a href="/lost">Lost Gallery</a></li>
                     <li><a href="/about">About This App</a></li>
 
@@ -76,6 +76,7 @@
 
 						<div class="container navbar-right nav-link dropdown col-md-3 menu-close">
 
+						
 						<a href="#" onclick="postNeedLogin()" class = "dropdown-toggle" data-toggle = "dropdown">New Post <span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
 
 
@@ -90,30 +91,29 @@
         	<div  class = "page-table">
 
 	        	<div class = "page-cell">
-					<div class="contain menu-close">
-						<div class="title">
-							<h1>seeker.</h1>
-							<h2>YOUR TRITON LOST & FOUND</h2>
+					<div class="container">
+						<div class = "row losing-items">
+							{{#each posts}}
 
-							<div class = "container front-page-search form-group">
+								<div class = "col-xs-5">
+										<h3>{{title}}</h3>
+										<h4>Posted {{date}} at {{time}}</h4>
+								</div>
 
-								<input type = "text" class = "form-control" id = "post-lost" placeholder = "I'm looking for...">
+								<div class = "col-xs-7">
+										<img src="{{imageURL}}" class="img-responsive"> 
+								</div>
 
+								<div class = "col-xs-12">
+									<p>{{description}}</p>
 
-							</div>
-
-							<div class = "container front-page-search form-group">
-
-								<input type = "text" class = "form-control" id = "post-found" placeholder = "I want to return...">
-
-
-							</div>
-
-							<div class="buttons">
-								<a class="solid-btn" href="/search">Search</a>
-							</div>
+									<i>For more information, contact <a href="/userprofile">{{author}}</a>.</i>
+									<hr>
+								</div>
+								
+							{{/each}}
 						</div>
-					</div> 
+					</div>
 				</div>
 
 			</div>
@@ -164,7 +164,7 @@
 					<div class = "modal-footer">
 						<a class = "btn btn-success pull-left" type = "submit" data-dismiss = "modal" href="#sign-up" data-toggle="modal">Sign up now</a>
 						<a class = "btn btn-default" data-dismiss = "modal">Close</a>
-						<a href="/logined-index" class = "btn btn-primary" type = "submit">Login</a>
+						<a href = "/logined-found" class = "btn btn-primary" type = "submit">Login</a>
 					</div>
 
 				</form>
@@ -246,11 +246,13 @@
 
 	<script src="/js/jquery-1.11.0.js"></script>
 	<script src="js/bootstrap.min.js"></script>
-    <script src="/js/hci-friends.js"></script>
-
+	<script src="/js/hci-friends.js"></script>
 
 
 </body>
 
 
+
+
 </html>
+

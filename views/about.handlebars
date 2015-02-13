@@ -45,10 +45,11 @@
                     <a href="#">
                     </a>
                 </li>
-                    <li class = "current"><a href="/">Home Page</a></li>
-                    <li><a href="/found">Found Gallery</a></li>
-                    <li><a href="/lost">Lost Gallery</a></li>
-                    <li><a href="/about">About This App</a></li>
+
+                <li><a href="/">Home Page</a></li>
+                <li><a href="/found">Found Gallery</a></li>
+                <li><a href="/lost">Lost Gallery</a></li>
+                <li class = "current"><a href="/about">About This App</a></li>
 
             </ul>
         </div>
@@ -90,30 +91,33 @@
         	<div  class = "page-table">
 
 	        	<div class = "page-cell">
-					<div class="contain menu-close">
+					<div class="container menu-close"> 
+<!-- the above are navigation bars -->
+<!-- all page content start here -->
+
 						<div class="title">
 							<h1>seeker.</h1>
 							<h2>YOUR TRITON LOST & FOUND</h2>
 
-							<div class = "container front-page-search form-group">
 
-								<input type = "text" class = "form-control" id = "post-lost" placeholder = "I'm looking for...">
+							<div class="container about-paragraphs">
+								<i>Welcome to the UCSD Seeker app.</i><br><br>
 
+								This application aims to connect students who have lost or found<br>
+								items on campus. By providing a centralized location for posting about<br>
+								missing items, we can <b>minimize search times</b> for busy UCSD students.<br><br>
 
+								Navigate our site using the tabs in the bar above.<br>
+								The <b>Lost</b> button will bring you to posts regarding recently lost items.<br>
+								Similarly, the <b>Found</b> button will bring up posts about recently found items.<br>
+								Use the <b>Search</b> feature if you are looking for something specific.
 							</div>
 
-							<div class = "container front-page-search form-group">
-
-								<input type = "text" class = "form-control" id = "post-found" placeholder = "I want to return...">
-
-
-							</div>
-
-							<div class="buttons">
-								<a class="solid-btn" href="/search">Search</a>
-							</div>
 						</div>
-					</div> 
+
+<!-- all page content end here -->
+
+					</div>
 				</div>
 
 			</div>
@@ -154,7 +158,7 @@
 							<label for = "login-password" class = "col-lg-2 control-label">Password:</label>
 							<div class = "col-lg-10">
 
-								<input type = "text" class = "form-contol" id = "login-password" placeholder = "Password">
+								<inputtype = "text" class = "form-contol" id = "login-password" placeholder = "Password">
 							</div>
 						</div>
 
@@ -164,7 +168,7 @@
 					<div class = "modal-footer">
 						<a class = "btn btn-success pull-left" type = "submit" data-dismiss = "modal" href="#sign-up" data-toggle="modal">Sign up now</a>
 						<a class = "btn btn-default" data-dismiss = "modal">Close</a>
-						<a href="/logined-index" class = "btn btn-primary" type = "submit">Login</a>
+						<a  href = "/logined-about" class = "btn btn-primary" type = "submit">Login</a>
 					</div>
 
 				</form>
@@ -246,11 +250,18 @@
 
 	<script src="/js/jquery-1.11.0.js"></script>
 	<script src="js/bootstrap.min.js"></script>
-    <script src="/js/hci-friends.js"></script>
-
+	<script src="/js/hci-friends.js"></script>
 
 
 </body>
 
 
+
+
 </html>
+
+
+
+
+
+
