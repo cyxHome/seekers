@@ -47,10 +47,10 @@
                     <a href="#">
                     </a>
                 </li>
-                    <li class = "current"><a href="/">Home Page</a></li>
-                    <li><a href="/found">Found Gallery</a></li>
-                    <li><a href="/lost">Lost Gallery</a></li>
-                    <li><a href="/about">About This App</a></li>
+                    <li><a href="/logined-index">Home Page</a></li>
+                    <li><a href="/logined-found">Found Gallery</a></li>
+                    <li><a href="/logined-lost">Lost Gallery</a></li>
+                    <li><a href="/logined-about">About This App</a></li>
 
             </ul>
         </div>
@@ -84,7 +84,7 @@
 								<li><a href="/account-message">Mail <span class="badge">4</span></a></li>
 								<li><a href="/account-mypost">My Post</a></li>
 								<li><a href="/account-profile">Profile</a></li>
-								<li><a href = "/">Logout</a></li>
+								<li><a href = "/" onclick="logoutSuccess()" >Logout</a></li>
 
 							</ul>
 							<!-- </div> -->
@@ -124,74 +124,58 @@
 							      </div>
 						        
 						          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
-						   
-						   
-						          <div class="panel panel-info">
+	<!-- profile content start here -->						   
+						   		{{#each profile}}
+						          <div class="panel panel-info" id="user-profile">
 							            <div class="panel-heading">
 
 							            	<span class="pull-right">
-							                     <a href="/account-profile-edit" data-original-title="Edit this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-edit"></i></a>
+							                     <a href="/account-profile-edit" data-original-title="Edit this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning" id="editUserProfileSubmitButton"><i class="glyphicon glyphicon-edit"></i></a>
 							                </span>
 
-							              <h3 class="panel-title">Sheena Kristin A.Eschor</h3>
+							              <h3 class="panel-title" id="user-profile-name">{{name}}</h3>
 							            </div>
 							            <div class="panel-body">
 							              <div class="row">
-							                <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=100" class="img-circle"> </div>
+							                <div class="col-md-3 col-lg-3 " align="center" id="user-profile-picture"><img alt="User Pic" src={{profilePicture}} class="img-circle">
+							                </div>
 							                
 							                <div class=" col-md-9 col-lg-9 "> 
 							                  <table class="table table-user-information">
 							                    <tbody>
 
-	<!-- profile content start here -->
 							                      <tr>
-							                        <td>Email</td>
-							                        <td><a href="mailto:info@support.com">info@support.com</a></td>
+							                        <td>Email</td>							                   
+							                        <td><div id="user-profile-email"><a href="mailto:info@support.com">{{email}}</a></div></td>
 							                      </tr>
 												
 												  <tr>
 							                        <td>Phone Number</td>
-							                        <td>555-4567-890(Mobile)</td>
+							                        <td><div id="user-profile-phone">{{phone}}</div></td>
 												  </tr>
 							                      
 							                      <tr>
 							                        <td>Other contact information</td>
-							                        <td><a href="mailto:info@support.com">facebook: *****</a></td>
+							                        <td><div id="user-profile-otherInfo">{{otherInfo}}</a></div></td>
 							                      </tr>
 							                     
 							                      <tr>
 							                        <td>Post</td>
-							                        <td><a href = "/account-mypost">4</a></td>
+							                        <td><div id="user-profile-post"><a href = "/account-mypost">{{postNumber}}</a></div></td>
 							                      </tr>
-
-							                     
-
-	<!-- profile content end here -->
 
 							                    </tbody>
 							                  </table>
-							                  
-
 							                </div>
+
 							              </div>
 						            	</div>
-						            
 						          </div>
+						          {{/each}}
+	<!-- profile content start here -->	
+
 						        </div>
 						      </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 <!-- page content end here -->
@@ -214,6 +198,7 @@
 	<script src="/js/jquery-1.11.0.js"></script>
 	<script src="js/bootstrap.min.js"></script>
     <script src="/js/hci-friends.js"></script>
+    <script src="js/localforage.js"></script>
 
 
 

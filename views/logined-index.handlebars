@@ -83,7 +83,7 @@
 								<li><a href="/account-message">Mail <span class="badge">4</span></a></li>
 								<li><a href="/account-mypost">My Post</a></li>
 								<li><a href="/account-profile">Profile</a></li>
-								<li><a href = "/">Logout</a></li>
+								<li><a href = "/" onclick="logoutSuccess()" >Logout</a></li>
 
 							</ul>
 							<!-- </div> -->
@@ -113,26 +113,24 @@
 
 	        	<div class = "page-cell">
 					<div class="contain menu-close">
-						<div class="title">
+						<div class="title" id="search-form">
 							<h1>seeker.</h1>
 							<h2>YOUR TRITON LOST & FOUND</h2>
 
 							<div class = "container front-page-search form-group">
 
-								<input type = "text" class = "form-control" id = "post-lost" placeholder = "I'm looking for...">
-
+								<input type = "text" class = "form-control" id = "search-lost" placeholder = "I want to return...">
 
 							</div>
 
 							<div class = "container front-page-search form-group">
 
-								<input type = "text" class = "form-control" id = "post-found" placeholder = "I want to return...">
-
+								<input type = "text" class = "form-control" id = "search-found" placeholder = "I'm looking for...">
 
 							</div>
 
 							<div class="buttons">
-								<a class="solid-btn" href="/search">Search</a>
+								<a class="solid-btn" id="searchSubmitButton">Search</a>
 							</div>
 						</div>
 					</div> 
@@ -152,6 +150,7 @@
 	<script src="/js/jquery-1.11.0.js"></script>
 	<script src="js/bootstrap.min.js"></script>
     <script src="/js/hci-friends.js"></script>
+    <script src="js/localforage.js"></script>
 
 
 

@@ -1,6 +1,20 @@
-var data = require('../data.json');
+
+var models = require('../models');
+
+/*
+ * GET home page.
+ */
 
 exports.view = function(req, res){
-	// console.log(data);
-	res.render('lost', data);
+
+	models.LostGallery
+		.find()
+		.sort('date')
+		.exec(renderItems);
+
+	function renderItems(err, items) {
+		console.log(items); 
+		res.render('lost', { 'lost-items': items });
+	}
+
 };
