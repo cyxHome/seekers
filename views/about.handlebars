@@ -130,13 +130,14 @@
 
 
 
+
 <!-- Login form start here -->
 
 
 	<div class = "modal fade" id = "login" role = "dialog">
 		<div class = "modal-dialog">
 			<div class = "modal-content">
-				<form class = "form-horizontal">
+				<form class = "form-horizontal" id="login-form">
 					<div class = "modal-header">
 						<h4>Welcome to Seeker!</h4>
 					</div>
@@ -146,7 +147,7 @@
 
 						<div class = "form-group">
 
-							<label for = "login-name" class = "col-lg-2 control-label">Username:</label>
+							<label for = "login-name" class = "col-lg-2 control-label">Name:</label>
 							<div class = "col-lg-10">
 
 								<input type = "text" class = "form-contol" id = "login-name" placeholder = "Phone,email or username">
@@ -158,7 +159,7 @@
 							<label for = "login-password" class = "col-lg-2 control-label">Password:</label>
 							<div class = "col-lg-10">
 
-								<inputtype = "text" class = "form-contol" id = "login-password" placeholder = "Password">
+								<input type = "text" class = "form-contol" id = "login-password" placeholder = "Password">
 							</div>
 						</div>
 
@@ -168,7 +169,7 @@
 					<div class = "modal-footer">
 						<a class = "btn btn-success pull-left" type = "submit" data-dismiss = "modal" href="#sign-up" data-toggle="modal">Sign up now</a>
 						<a class = "btn btn-default" data-dismiss = "modal">Close</a>
-						<a  href = "/logined-about" class = "btn btn-primary" type = "submit">Login</a>
+						<a class = "btn btn-primary" id="loginRequestSubmitButton" type = "submit">Login</a>
 					</div>
 
 				</form>
@@ -184,7 +185,7 @@
 	<div class = "modal fade" id = "sign-up" role = "dialog">
 		<div class = "modal-dialog">
 			<div class = "modal-content">
-				<form class = "form-horizontal">
+				<form class = "form-horizontal" id="sign-up-form">
 					<div class = "modal-header">
 						<h4>Welcome to Seeker!</h4>
 					</div>
@@ -194,10 +195,10 @@
 
 						<div class = "form-group">
 
-							<label for = "sign-up-name" class = "col-lg-2 control-label">Username:</label>
+							<label for = "sign-up-name" class = "col-lg-2 control-label">Name:</label>
 							<div class = "col-lg-10">
 
-								<input type = "text" class = "form-contol" id = "sign-up-name" placeholder = "username">
+								<input type = "text" class = "form-contol" id = "sign-up-name" placeholder = "name">
 							</div>
 						</div>
 
@@ -235,7 +236,7 @@
 
 					<div class = "modal-footer">
 						<a class = "btn btn-default" data-dismiss = "modal">Close</a>
-						<a class = "btn btn-primary" type = "submit">Creat Account</a>
+						<a class = "btn btn-primary" id="newAccountCreateButton" type = "submit">Creat Account</a>
 					</div>
 
 				</form>
@@ -248,9 +249,11 @@
 
 <!-- Login form end here -->
 
+
 	<script src="/js/jquery-1.11.0.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="/js/hci-friends.js"></script>
+	<script src="js/localforage.js"></script>
 
 
 </body>

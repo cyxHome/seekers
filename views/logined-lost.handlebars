@@ -84,7 +84,7 @@
 								<li><a href="/account-message">Mail <span class="badge">4</span></a></li>
 								<li><a href="/account-mypost">My Post</a></li>
 								<li><a href="/account-profile">Profile</a></li>
-								<li><a href = "/lost">Logout</a></li>
+								<li><a href = "/" onclick="logoutSuccess()" >Logout</a></li>
 
 							</ul>
 							<!-- </div> -->
@@ -114,11 +114,11 @@
 	        	<div class = "page-cell">
 					<div class="container">
 						<div class = "row losing-items">
-							{{#each posts}}
+							{{#each lost-items}}
 
 								<div class = "col-xs-5">
 										<h3>{{title}}</h3>
-										<h4>Posted {{date}} at {{time}}</h4>
+										<h4>Posted at {{date}}</h4>
 								</div>
 
 								<div class = "col-xs-7">
@@ -127,7 +127,8 @@
 
 								<div class = "col-xs-12">
 									<p>{{description}}</p>
-									<i>For more information, contact <a href="/userprofile">{{author}}</a>.</i>
+									<!-- fake hyperlink, actually redirect through the click listener -->
+									<i>For more information, contact <a href="#" class = "author-of-post" author="{{author}}">{{author}}</a>.</i>
 									<hr>
 								</div>
 								
@@ -151,6 +152,7 @@
 	<script src="/js/jquery-1.11.0.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="/js/hci-friends.js"></script>
+	<script src="js/localforage.js"></script>
 
 
 </body>

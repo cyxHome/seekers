@@ -45,7 +45,7 @@
                     <a href="#">
                     </a>
                 </li>
-                    <li class = "current"><a href="/logined-index">Home Page</a></li>
+                    <li><a href="/logined-index">Home Page</a></li>
                     <li><a href="/logined-found">Found Gallery</a></li>
                     <li><a href="/logined-lost">Lost Gallery</a></li>
                     <li><a href="/logined-about">About This App</a></li>
@@ -83,7 +83,7 @@
 								<li><a href="/account-message">Mail <span class="badge">4</span></a></li>
 								<li><a href="/account-mypost">My Post</a></li>
 								<li><a href="/account-profile">Profile</a></li>
-								<li><a href = "/">Logout</a></li>
+								<li><a href = "/" onclick="logoutSuccess()" >Logout</a></li>
 
 							</ul>
 							<!-- </div> -->
@@ -116,63 +116,64 @@
 <!-- the above are navigation bars -->
 <!-- all page content start here -->
 					
+						<div id="post-new-found-form">
 
-						<p class = "post-form-title"> I just found something! <p>
-						<div class="input-group input-group-md">
-						  <span class="input-group-addon" id="sizing-addon2">what</span>
-						  <input type="text" class="form-control" placeholder="bottle/skateboard/student id..." aria-describedby="sizing-addon1">
+							<p class = "post-form-title">I just found something!</p>
+							<div class="input-group input-group-md">
+							  <span class="input-group-addon">what</span>
+							  <input type="text" class="form-control" id="new-found-title" placeholder="bottle/skateboard/student id..." aria-describedby="sizing-addon1">
+							</div>
+							<br>
+
+							<div class="input-group input-group-md">
+
+							  <span class="input-group-addon">where</span>
+							  <input type="text" class="form-control" id="new-found-location" placeholder="Geisel library/ERC/..."  aria-describedby="sizing-addon1">
+							</div>
+							<br>
+
+
+
+							<form>
+							  <div class="form-group">
+							    <label for="exampleInputEmail1">Description</label>
+							    <textarea class="form-control" id="new-found-description" placeholder="Tell us about how you find it..." style="margin: 0px; width: 100%; border-radius: 4px;"></textarea>
+							  </div>
+
+
+							  <div class="form-group">
+							    <label for="exampleInputPassword1">Set Verification Question</label>
+							    <input type="text" class="form-control" id="new-found-verification" placeholder="What's the drawing on the skatebord?/...">
+							  </div>
+
+
+							  <!-- upload picture -->
+							  <div class="form-group">
+							    <label for="exampleInputImage">Image URL</label>
+							    <textarea class="form-control" id="new-found-image" placeholder="http://stockarch.com/files/12/03/skateboard.jpg" style="margin: 0px; width: 100%; border-radius: 4px;"></textarea>
+							    <p class="help-block">Please search for similar item in the internet and put the image URL here.</p>
+							  </div>
+
+							  <!-- submit button -->
+							  <div class = "row">
+							  	<div class = "col-xs-2">
+							  	</div>
+
+							  	<div class = "col-xs-4">
+							  		<button type="submit" class="btn btn-default"><a href = "/logined-index" class = "post-cancel">Cancel</a></button>
+							  	</div>
+
+							  	<div class = "col-xs-4">
+							  		<button id="newFoundItemSubmitButton" type="button" class="btn btn-primary">Submit</button>
+							  	</div>
+
+							  	<div class = "col-xs-2">
+							  	</div>
+							  </div>
+							</form>
+
 						</div>
-						<br>
-
-						<div class="input-group input-group-md">
-
-						  <span class="input-group-addon" id="sizing-addon2">where</span>
-						  <input type="text" class="form-control" placeholder="Geisel library/ERC/..."  aria-describedby="sizing-addon1">
-						</div>
-						<br>
-<!-- 
-						<div class="input-group input-group-md" style="width: 100%;">
-							
-						</div>
-						<br> -->
-
-						<form>
-						  <div class="form-group">
-						    <label for="exampleInputEmail1">Description</label>
-						    <textarea class="form-control" placeholder="Say something..." style="margin: 0px; width: 100%; border-radius: 4px;"></textarea>
-						  </div>
-
-
-						  <div class="form-group">
-						    <label for="exampleInputPassword1">Set Verfication Question</label>
-						    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="What's the drawing on the skatebord?/...">
-						  </div>
-
-
-						  <!-- upload picture -->
-						  <div class="form-group">
-						    <label for="exampleInputFile">Image of the Item</label>
-						    <input type="file" id="exampleInputFile">
-						    <p class="help-block">Example block-level help text here.</p>
-						  </div>
-
-						  <!-- submit button -->
-						  <div class = "row">
-						  	<div class = "col-xs-2">
-						  	</div>
-
-						  	<div class = "col-xs-4">
-						  		<button type="submit" class="btn btn-default"><a href = "/logined-index" class = "post-cancel">Cancel</a></button>
-						  	</div>
-
-						  	<div class = "col-xs-4">
-						  		<button type="submit" class="btn btn-primary">Submit</button>
-						  	</div>
-
-						  	<div class = "col-xs-2">
-						  	</div>
-						  </div>
-						</form>
+						<!-- id = "post-new-found-form" -->
 
 				
 
