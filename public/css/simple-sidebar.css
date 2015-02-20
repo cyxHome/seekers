@@ -58,6 +58,8 @@
 /* Sidebar Styles */
 
 .sidebar-nav {
+    font-family: ‘Palatino Linotype’, ‘Book Antiqua’, Palatino, serif;
+    font-weight: normal;
     position: absolute;
     top: 0;
     width: 250px;
@@ -86,6 +88,7 @@
 .sidebar-nav li.current {
     background: rgba(255,255,255,0.1);
 }
+
 
 .sidebar-nav li a:active,
 .sidebar-nav li a:focus {

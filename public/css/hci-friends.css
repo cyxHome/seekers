@@ -314,6 +314,7 @@ border-radius: 4px;
     height: 100%;
     margin-top: -55px;
     width: 100%;
+    text-align: center;
 }
 
 .page-cell {
@@ -321,6 +322,21 @@ border-radius: 4px;
     display: table-cell;
     vertical-align: middle;
 }
+
+.seekerfont {
+  font-family: "Bodoni MT", Didot, "Didot LT STD", "Book Antiqua", Garamond, "Times New Roman", serif;
+}
+
+.subfont{
+  font-family: "Dense-Regular", sans-serif;
+}
+
+
+
+.half-size {
+  font-size: 60%;
+}
+
 
 .post-form-description {
 position: relative;
