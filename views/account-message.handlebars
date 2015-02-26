@@ -82,7 +82,7 @@
 								<li><a href="/account-message">Mail <span class="badge">4</span></a></li>
 								<li><a href="/account-mypost">My Post</a></li>
 								<li><a href="/account-profile">Profile</a></li>
-								<li><a href = "/" onclick="logoutSuccess()" >Logout</a></li>
+								<li><a  href="#logout "data-toggle="modal">Logout</a></li>
 
 							</ul>
 							<!-- </div> -->
@@ -131,6 +131,29 @@
 
     </div>
     <!-- /#wrapper -->
+
+<!-- logout comfirt form is here -->
+
+    <div class = "modal fade" id = "logout" role = "dialog">
+        <div class = "modal-dialog">
+            <div class = "modal-content">
+                <form class = "form-horizontal" id="logout-form">
+                    <div class = "modal-header">
+                        <h4>Do you want to logout? </h4>
+                    </div>
+
+
+                    <div class = "modal-footer">
+                        <a class = "btn btn-default" data-dismiss = "modal">No </a>
+                        <a href="/" class = "btn btn-primary" onclick="logoutSuccess()" type = "submit">Yes</a>
+                    </div>
+
+                </form>
+
+
+            </div>
+        </div>
+    </div>
 
 
 

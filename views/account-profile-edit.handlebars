@@ -79,10 +79,10 @@
 							<ul class = "dropdown-menu 'pull-right'">
 							
 
-								<li><a href="/account-message">Mail <span class="badge">4</span></a></li>
+								<!-- <li><a href="/account-message">Mail <span class="badge">4</span></a></li> -->
 								<li><a href="/account-mypost">My Post</a></li>
 								<li><a href="/account-profile">Profile</a></li>
-								<li><a href = "/" onclick="logoutSuccess()" >Logout</a></li>
+								<li><a  href="#logout "data-toggle="modal">Logout</a></li>
 
 							</ul>
 							<!-- </div> -->
@@ -131,11 +131,7 @@
 							  <input type="text" class="form-control" id="edit-profile-phone" placeholder="{{phone}}"  aria-describedby="sizing-addon1">
 							</div>
 							<br>
-	<!-- 
-							<div class="input-group input-group-md" style="width: 100%;">
-								
-							</div>
-							<br> -->
+]
 
 							<form>
 							  <div class="form-group">
@@ -158,7 +154,7 @@
 							  	</div>
 
 							  	<div class = "col-xs-4">
-							  		<button type="submit" class="btn btn-default"><a href = "/account-profile"></a>Cancel</button>
+							  		<button type="submit" class="btn btn-default"><a href = "/account-profile">Cancel</a></button>
 							  	</div>
 
 							  	<div class = "col-xs-4">
@@ -190,123 +186,31 @@
 
 
 
-<!-- Login form start here -->
+\
+
+<!-- logout comfirt form is here -->
+
+        <div class = "modal fade" id = "logout" role = "dialog">
+        <div class = "modal-dialog">
+            <div class = "modal-content">
+                <form class = "form-horizontal" id="logout-form">
+                    <div class = "modal-header">
+                        <h4>Do you want to logout? </h4>
+                    </div>
 
 
-	<div class = "modal fade" id = "login" role = "dialog">
-		<div class = "modal-dialog">
-			<div class = "modal-content">
-				<form class = "form-horizontal">
-					<div class = "modal-header">
-						<h4>Welcome to Seeker!</h4>
-					</div>
+                    <div class = "modal-footer">
+                        <a class = "btn btn-default" data-dismiss = "modal">No </a>
+                        <a href="/" class = "btn btn-primary" onclick="logoutSuccess()" type = "submit">Yes</a>
+                    </div>
+
+                </form>
 
 
-					<div class = "modal-body">
+            </div>
+        </div>
+    </div>
 
-						<div class = "form-group">
-
-							<label for = "login-name" class = "col-lg-2 control-label">Username:</label>
-							<div class = "col-lg-10">
-
-								<input type = "text" class = "form-contol" id = "login-name" placeholder = "Phone,email or username">
-							</div>
-						</div>
-
-						<div class = "form-group">
-
-							<label for = "login-password" class = "col-lg-2 control-label">Password:</label>
-							<div class = "col-lg-10">
-
-								<input type = "text" class = "form-contol" id = "login-password" placeholder = "Password">
-							</div>
-						</div>
-
-					</div>
-
-
-					<div class = "modal-footer">
-						<a class = "btn btn-success pull-left" type = "submit" data-dismiss = "modal" href="#sign-up" data-toggle="modal">Sign up now</a>
-						<a class = "btn btn-default" data-dismiss = "modal">Close</a>
-						<a class = "btn btn-primary" type = "submit">Login</a>
-					</div>
-
-				</form>
-
-
-			</div>
-		</div>
-	</div>
-
-
-
-
-	<div class = "modal fade" id = "sign-up" role = "dialog">
-		<div class = "modal-dialog">
-			<div class = "modal-content">
-				<form class = "form-horizontal">
-					<div class = "modal-header">
-						<h4>Welcome to Seeker!</h4>
-					</div>
-
-
-					<div class = "modal-body">
-
-						<div class = "form-group">
-
-							<label for = "sign-up-name" class = "col-lg-2 control-label">Username:</label>
-							<div class = "col-lg-10">
-
-								<input type = "text" class = "form-contol" id = "sign-up-name" placeholder = "username">
-							</div>
-						</div>
-
-						<div class = "form-group">
-
-							<label for = "sign-up-email" class = "col-lg-2 control-label">Email:</label>
-							<div class = "col-lg-10">
-
-								<input type = "text" class = "form-contol" id = "sign-up-email" placeholder = "you@example.com">
-							</div>
-						</div>
-
-
-
-						<div class = "form-group">
-
-							<label for = "sign-up-password" class = "col-lg-2 control-label">Password:</label>
-							<div class = "col-lg-10">
-
-								<input type = "text" class = "form-contol" id = "sign-up-password" placeholder = "Password">
-							</div>
-						</div>
-
-						<div class = "form-group">
-
-							<label for = "sign-up-password-confirm" class = "col-lg-2 control-label">Confirm Password:</label>
-							<div class = "col-lg-10">
-
-								<input type = "text" class = "form-contol" id = "sign-up-password-confirm" placeholder = "Confirm Password">
-							</div>
-						</div>
-
-					</div>
-
-
-					<div class = "modal-footer">
-						<a class = "btn btn-default" data-dismiss = "modal">Close</a>
-						<a class = "btn btn-primary" type = "submit">Creat Account</a>
-					</div>
-
-				</form>
-
-
-			</div>
-		</div>
-	</div>
-
-
-<!-- Login form end here -->
 
 	<script src="/js/jquery-1.11.0.js"></script>
 	<script src="js/bootstrap.min.js"></script>
