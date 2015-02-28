@@ -2,9 +2,9 @@ var data = require('../data.json');
 
 exports.view = function(req, res){
 	console.log(req.cookies.pageVersion);
-	if (req.cookies.pageVersion === 1)
+	if (req.cookies.pageVersion === "1")
 		res.render('logined-index', data);
-	else if (req.cookies.pageVersion === 2)
+	else if (req.cookies.pageVersion === "2")
 		res.render('logined-index-alternative',data);
 	else 
 	{
