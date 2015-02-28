@@ -114,6 +114,8 @@
 	        	<div class = "page-cell">
 					<div class="container">
 						<div class = "row losing-items">
+
+							<div class = "col-xs-12">
 							{{#each search-items}}
 
 								<div class = "col-xs-5">
@@ -133,6 +135,23 @@
 								</div>
 
 							{{/each}}
+							</div>
+
+							<div class = "col-xs-12">
+							{{#each no-result}}
+								<h2>No match item post, try another keyword or check it in the Lost/Found Gallery </h2>
+							{{/each}}
+							</div>
+
+
+							<div class = "col-xs-1">
+							</div>
+
+							<div class = "col-xs-3">
+								<div class="panel-footer"><a href="#" onclick="goBack()" >Back</a></div>
+							</div>
+
+
 						</div>
 					</div>
 				</div>

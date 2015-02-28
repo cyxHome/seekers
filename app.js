@@ -55,6 +55,7 @@ app.use(express.json());
 app.use(express.urlencoded());
 app.use(express.methodOverride());
 app.use(express.cookieParser('Intro HCI secret key'));
+// app.use(express.bodyParser());
 app.use(express.session());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
@@ -69,12 +70,14 @@ if ('development' == app.get('env')) {
 // app.get('/users', user.list);
 
 app.get('/', index.view);
+app.get('/index-alternative', index.view);
 app.get('/lost', lost.view);
 app.get('/found', found.view);
 app.get('/about', about.view);
 app.get('/post-found', postfound.view);
 app.get('/post-lost', postlost.view);
 app.get('/logined-index', loginedindex.view);
+app.get('/logined-index-alternative', loginedindex.view);
 app.get('/logined-about', loginedabout.view);
 app.get('/logined-lost', loginedlost.view);
 app.get('/logined-found', loginedfound.view);
@@ -85,6 +88,9 @@ app.get('/account-profile-edit', accountprofileedit.view);
 app.get('/account-mypost-edit', accountmypostedit.view);
 app.get('/others-profile', othersprofile.view);
 app.get('/search-post', searchpost.view);
+// app.get('/back', function(req, res){
+// 	res.redirect('back');
+// });
 
 
 app.post('/account/new', account.addAccount);

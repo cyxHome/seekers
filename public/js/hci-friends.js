@@ -295,7 +295,7 @@ function initializePage() {
 
 
 	/**
-	 * Search for the related item (listening to the submit button in index.handlebars, logined-index.handlebars)
+	 * Search for the related item (listening to the submit button in logined-index.handlebars)
 	 */
 	$('#searchSubmitButton').click(function(e) {
 		console.log('clicked searchSubmitButton');
@@ -329,6 +329,28 @@ function initializePage() {
 		}
 	});
 
+	/**
+	 * Search for the related item (listening to the submit button in logined-index-alternative.handlebars)
+	 */
+	$('#searchSubmitButtonAlternative').click(function(e) {
+		console.log('clicked searchSubmitButtonAlternative');
+		var searchLost = $('#search-form #search-lost').val();
+		console.log("searchLost: "+searchLost+" Its length: "+searchLost.length);
+		if (searchLost.length !==0)
+		{   // post the item to search and display all the related items in the lost gallery
+			$.post('/search-post/lost', { item: searchLost }, function() { 
+				// redirect to lost gallery (logined-lost.handlebars)
+				window.location.href = '/search-post';  
+			});
+		}
+		else 
+		{   // alert the user that he/she has not enter any thing and click search
+			alert("please enter the item you want to search for and click search");
+			return;
+		}
+	});
+
+
 	/** 
 	 * alert the user to login when the user want to see other's profile
 	 * prevent refresh the page by preventDefault()
@@ -339,10 +361,20 @@ function initializePage() {
 		seeProfileNeedLogin();
 	});
 
+
+}
+
+
 // initializePage end here
-} 
 
 
+/**
+ * Go back to the last page button
+ */
+function goBack() {
+	console.log('clicked goBackButton');
+ 	window.history.back()
+}
 
 function passwordNotMatch() {
 	alert("the name and password you entered can not match")
