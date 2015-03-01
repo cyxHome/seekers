@@ -28,15 +28,16 @@ exports.changeImg = function(req,res){
     models.FoundGallery // display the updated data in the database
         .update({"_id": itemID}, updateObj, function (err,items) {
           // jump to the post-lost page
-          models.FoundGallery
-            .find()
-            .sort('date')
-            .exec(renderItems);
+          // models.FoundGallery
+          //   .find()
+          //   .sort('date')
+          //   .exec(renderItems);
+          res.redirect('/logined-found');
 
-          function renderItems(err, items) {
-            // console.log(projects); 
-            res.render('logined-found', { 'found-items': items });
-          }
+          // function renderItems(err, items) {
+          //   // console.log(projects); 
+          //   res.render('logined-found', { 'found-items': items });
+          // }
           // res.render('post-found', 1);
       });
   }
