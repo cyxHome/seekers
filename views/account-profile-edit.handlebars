@@ -131,9 +131,9 @@
 							  <input type="text" class="form-control" id="edit-profile-phone" placeholder="{{phone}}"  aria-describedby="sizing-addon1">
 							</div>
 							<br>
-]
 
-							<form>
+
+							<form id="uploadForm" enctype="multipart/form-data" action="/api/photo/profile" method="post">
 							  <div class="form-group">
 							    <label for="exampleInputEmail1">Other contact information</label>
 							    <textarea class="form-control" id="edit-profile-otherInfo" placeholder="facebook/twitter/..." style="margin: 0px; width: 100%; border-radius: 4px;">{{otherInfo}}</textarea>
@@ -143,9 +143,8 @@
 
 							<!-- upload picture -->
 							  <div class="form-group">
-								<label for="exampleInputImage">Profile Picture URL</label>
-								<textarea class="form-control" id="edit-profile-image" placeholder="http://stockarch.com/files/12/03/skateboard.jpg" style="margin: 0px; width: 100%; border-radius: 4px;">{{profilePicture}}</textarea>
-								<p class="help-block">Please use image online and put the image URL here.</p>
+							    <label for="exampleInputImage">Upload Profile image</label>
+								<input type="file" name="userPhoto" class="form-control" id="new-profile-image">
 							  </div>
 
 							  <!-- submit button -->

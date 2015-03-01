@@ -113,49 +113,22 @@
 
 	        	<div class = "page-cell">
 					<div class="container">
-						<div class = "row losing-items-search">
+						<div class="gallery-title"> Search Result </div>
+						<div class = "row losing-items">
 
 							<div class = "col-xs-12">
 							{{#each search-items-founds}}
 
-								<div class = "col-xs-5">
-										<h3>{{title}}</h3>
-										<h4>Posted at {{date}}</h4>
-								</div>
-
-								<div class = "col-xs-7">
-										<img src="{{imageURL}}" class="img-responsive"> 
-								</div>
-
-								<div class = "col-xs-12">
-									<p>{{description}}</p>
-									<!-- fake hyperlink, actually redirect through the click listener -->
-									<i>For more information, contact <a href="#" class = "author-of-post" author="{{author}}">{{author}}</a>.</i>
-									<hr>
-								</div>
-
+								<!-- use partial to render the items -->
+  								{{> post-item-display}}
+									
 							{{/each}}
 							</div>
 
 
 							<div class = "col-xs-12">
 							{{#each search-items-lost}}
-
-								<div class = "col-xs-5">
-										<h3>{{title}}</h3>
-										<h4>Posted at {{date}}</h4>
-								</div>
-
-								<div class = "col-xs-7">
-										<img src="{{imageURL}}" class="img-responsive"> 
-								</div>
-
-								<div class = "col-xs-12">
-									<p>{{description}}</p>
-									<!-- fake hyperlink, actually redirect through the click listener -->
-									<i>For more information, contact <a href="#" class = "author-of-post" author="{{author}}">{{author}}</a>.</i>
-									<hr>
-								</div>
+								  {{> post-item-display}}
 
 							{{/each}}
 							</div>

@@ -4,6 +4,8 @@
  */
 
 var express = require('express');
+var multer  = require('multer');
+
 var http = require('http');
 var path = require('path');
 var handlebars = require('express3-handlebars');
@@ -44,6 +46,8 @@ mongoose.connect(database_uri);
 
 var app = express();
 
+// var done=false;
+
 // all environments
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
@@ -57,8 +61,42 @@ app.use(express.methodOverride());
 app.use(express.cookieParser('Intro HCI secret key'));
 // app.use(express.bodyParser());
 app.use(express.session());
+
+/*Configure the multer.*/
+
+app.use(multer({ dest: 'public/uploads/',
+ rename: function (fieldname, filename) {
+ 	console.log("filename: "+filename);
+    return filename+Date.now();
+  },
+onFileUploadStart: function (file) {
+  console.log(file.originalname + ' is starting ...')
+},
+onFileUploadComplete: function (file) {
+  console.log(file.fieldname + ' uploaded to  ' + file.path)
+  // done=true;
+}
+}));
+
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
+
+
+
+
+
+/*Handling routes.*/
+
+
+// app.get('/uploaded',function(req,res){
+// 	console.log(req.files);
+// 	// console.log(req.files.userPhoto.path);
+// 	res.sendfile("about.html");
+// });
+
+
+
+
 
 // development only
 if ('development' == app.get('env')) {
@@ -93,6 +131,9 @@ app.get('/search-post-alternative', searchpost.view);
 // 	res.redirect('back');
 // });
 
+app.post('/api/photo/lost', postlost.changeImg);
+app.post('/api/photo/found', postfound.changeImg);
+app.post('/api/photo/profile', accountprofileedit.changeImg);
 
 app.post('/account/new', account.addAccount);
 app.post('/post-found/new', postfound.addFoundItem);
@@ -109,7 +150,7 @@ app.post('/edit-profile/postNumberMinusOne', accountprofileedit.postMinusOne);
 app.post('/gotoOthersProfile', othersprofile.gotoOthersProfile);
 app.post('/search-post/lost', searchpost.searchForLostItems);
 app.post('/search-post/found', searchpost.searchForFoundItems);
-
+app.post('/search-post/all', searchpost.searchForAllItems);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

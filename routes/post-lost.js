@@ -7,26 +7,50 @@ exports.view = function(req, res){
 
 var models = require('../models');
 
+/**
+ * change the image URL to the URL just set up
+ */
+exports.changeImg = function(req,res){
+    var currentName = req.cookies.currentAccount;
+    // get rid of the /public (cased by the setting of the staic path in app.js)
+    var imgPath = req.files.userPhoto.path.substring(7);;
+    var updateObj = {"imageURL": imgPath};
+
+    models.LostGallery
+    .find({"author": currentName})
+    .sort('-date')
+    .exec(afterQuery);
+
+  function afterQuery(err, items) {
+    var itemID = items[0]._id;
+
+    models.LostGallery // display the updated data in the database
+        .update({"_id": itemID}, updateObj, function () {
+          // jump to the post-lost page
+          res.render('post-lost', 1);
+      });
+  }
+
+}
+
+
 exports.addLostItem = function(req, res) {
   var form_data = req.body;
   console.log(form_data);
 
-  // models.CurrentAccount // get the current account from the database
-  //   .find({"id": 1},{"name": 1, "_id": 0}, function (err, docs) {
-  //     var currentAccountArr = docs.map(function(d){ return d.toObject() });
-  //     var currentName = currentAccountArr[0].name;
   var currentName = req.cookies.currentAccount;
 
       var newLostItem = new models.LostGallery({
       "author": currentName,
     	"title": form_data['title'],
     	"date": form_data['date'],
+      "time": form_data['time'],
     	"location": form_data['location'],
     	"description": form_data['description'],
     	"imageURL": form_data['imageURL']
       });
 
-      console.log("newLostItem: "+newLostItem);
+      // console.log("newLostItem: "+newLostItem);
       newLostItem.save(afterSaving);
 
       function afterSaving(err) {

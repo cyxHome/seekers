@@ -148,53 +148,15 @@ function onceClearAccountProfile(err) {
       console.log(to_save_count + ' left to save');
       if(to_save_count <= 0) {
         console.log('Account Profile Initialization DONE');
+          // The script won't terminate until the 
+          // connection to the database is closed
 
+          // put this in the last intialization
+          // and check in the terminal that all the database has been intialized properly (with "Done" printed out)
+        mongoose.connection.close(); 
        
       }
     });
   }
 }
 
-
-/**
- * Initalize the current account to empty string
- */
-
-// Step 1: load data from local file
-var currentAccounts_json = require('./data_json/current-account.json');
-
-// Step 2: Remove all existing documents
-models.CurrentAccount
-  .find()
-  .remove()
-  .exec(onceClearCurrentAccount); // callback to continue at
-
-// Step 3: load the data from the JSON file
-function onceClearCurrentAccount(err) {
-  if(err) console.log(err);
-  console.log('currentAccounts_json.length: ' + currentAccounts_json.length);
-
-  // loop over the projects, construct and save an object from each one
-  // Note that we don't care what order these saves are happening in...
-  var to_save_count = currentAccounts_json.length;
-  for(var i=0; i<currentAccounts_json.length; i++) {
-    var json = currentAccounts_json[i];
-    var proj = new models.CurrentAccount(json);
-    proj.save(function(err, proj) {
-        if(err) console.log(err);
-
-        to_save_count--;
-        console.log(to_save_count + ' left to save');
-        if(to_save_count <= 0) {
-           console.log('Current Account Initialization DONE');
-
-          // The script won't terminate until the 
-          // connection to the database is closed
-
-          // put this in the last intialization
-          // and check in the terminal that all the database has been intialized properly (with "Done" printed out)
-           mongoose.connection.close(); 
-        }
-    });
-  }
-}

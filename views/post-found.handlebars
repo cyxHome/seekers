@@ -134,7 +134,7 @@
 
 
 
-							<form>
+							<form id="uploadForm" enctype="multipart/form-data" action="/api/photo/found" method="post">
 							  <div class="form-group">
 							    <label for="exampleInputEmail1">Description</label>
 							    <textarea class="form-control" id="new-found-description" placeholder="Tell us about how you find it..." style="margin: 0px; width: 100%; border-radius: 4px;"></textarea>
@@ -149,9 +149,8 @@
 
 							  <!-- upload picture -->
 							  <div class="form-group">
-							    <label for="exampleInputImage">Image URL</label>
-							    <textarea class="form-control" id="new-found-image" placeholder="http://stockarch.com/files/12/03/skateboard.jpg" style="margin: 0px; width: 100%; border-radius: 4px;"></textarea>
-							    <p class="help-block">Please search for similar item in the internet and put the image URL here.</p>
+							    <label for="exampleInputImage">Upload Image</label>
+							    <input type="file" name="userPhoto" class="form-control" id="new-found-image">
 							  </div>
 
 							  <!-- submit button -->
@@ -164,7 +163,7 @@
 							  	</div>
 
 							  	<div class = "col-xs-4">
-							  		<button id="newFoundItemSubmitButton" type="button" class="btn btn-primary">Submit</button>
+							  		<button id="newFoundItemSubmitButton" type="submit" class="btn btn-primary">Submit</button>
 							  	</div>
 
 							  	<div class = "col-xs-2">

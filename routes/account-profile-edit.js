@@ -22,6 +22,25 @@ exports.view = function(req, res) {
 		// });
 }
 
+/**
+ * change the image URL to the URL just set up
+ */
+exports.changeImg = function(req,res){
+    var currentName = req.cookies.currentAccount;
+    // get rid of the /public (cased by the setting of the staic path in app.js)
+    var imgPath = req.files.userPhoto.path.substring(7);;
+    var updateObj = {"profilePicture": imgPath};
+    console.log("change here !!!!!!!");
+
+
+    models.AccountProfile // display the updated data in the database
+        .update({"name": currentName}, updateObj, function () {
+			res.send("profile OK");
+      });
+
+
+}
+
 
 /**
  * Update the account profile

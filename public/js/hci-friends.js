@@ -38,11 +38,16 @@ function initializePage() {
 		var verification = $('#post-new-found-form #new-found-verification').val();
 		var image_url = $('#post-new-found-form #new-found-image').val();
 		var currentdate = new Date(); 
+		var dt = new Date().toString();
+		console.log(dt); // Mon Jul 16 2012 15:21:09 GMT+0530 (India Standard Time)
+		var currentTime = dt.substr(0, dt.indexOf('GMT'));
+		console.log(currentTime); // Mon Jul 16 2012 15:21:09 
 		var json = {
 			// the author information is gathered from the server
 			"title": title,
 			// the date and time information is set automatically according to the system time
 			"date": currentdate,
+			"time": currentTime,
 			"location": location,
 			"description": description,
 			"verification": verification,
@@ -68,11 +73,16 @@ function initializePage() {
 		var description = $('#post-new-lost-form #new-lost-description').val();
 		var image_url = $('#post-new-lost-form #new-lost-image').val();
 		var currentdate = new Date(); 
+		var dt = new Date().toString();
+		console.log(dt); // Mon Jul 16 2012 15:21:09 GMT+0530 (India Standard Time)
+		var currentTime = dt.substr(0, dt.indexOf('GMT'));
+		console.log(currentTime); // Mon Jul 16 2012 15:21:09 
 		var json = {
 			// the author information is gathered from the server
 			"title": title,
 			// the date and time information is set automatically according to the system time
 			"date": currentdate,
+			"time": currentTime,
 			"location": location,
 			"description": description,
 			"imageURL": image_url
@@ -345,7 +355,7 @@ function initializePage() {
 		console.log("searchLost: "+searchLost+" Its length: "+searchLost.length);
 		if (searchLost.length !==0)
 		{   // post the item to search and display all the related items in the lost gallery
-			$.post('/search-post/lost', { item: searchLost }, function() { 
+			$.post('/search-post/all', { item: searchLost }, function() { 
 				// redirect to lost gallery (logined-lost.handlebars)
 				window.location.href = '/search-post-alternative';  
 			});
