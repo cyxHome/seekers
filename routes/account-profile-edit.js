@@ -21,17 +21,26 @@ exports.view = function(req, res) {
  * change the image URL to the URL just set up
  */
 exports.changeImg = function(req,res){
-    var currentName = req.cookies.currentAccount;
-    // get rid of the /public (cased by the setting of the staic path in app.js)
-    var imgPath = req.files.userPhoto.path.substring(7);;
-    var updateObj = {"profilePicture": imgPath};
-    console.log("change here !!!!!!!");
+
+	if (req.files.userPhoto === undefined)
+    {
+    	res.redirect('/account-profile');
+    }
+    else
+    {
+	    var currentName = req.cookies.currentAccount;
+	    // get rid of the /public (cased by the setting of the staic path in app.js)
+	    var imgPath = req.files.userPhoto.path.substring(7);;
+	    var updateObj = {"profilePicture": imgPath};
+	    console.log("change here !!!!!!!");
 
 
-    models.AccountProfile // display the updated data in the database
-        .update({"name": currentName}, updateObj, function () {
-			res.render('account-profile', 1);
-      });
+	    models.AccountProfile // display the updated data in the database
+	        .update({"name": currentName}, updateObj, function () {
+				// go to check the new account information
+	          	res.redirect('/account-profile');
+	      });
+	}
 }
 
 
@@ -43,12 +52,15 @@ exports.editProfile = function(req, res) {
 	newProfileInfo = form_data['json'];
 
 	// Build up update object programmatically to not include 'title'/'location' when not provided:
-	var updateObj = {"otherInfo": newProfileInfo["otherInfo"], "profilePicture": newProfileInfo["profilePicture"]};
+	var updateObj = {"otherInfo": newProfileInfo["otherInfo"]};
 	if (newProfileInfo["email"]) {
 	    updateObj["email"] = newProfileInfo["email"];
 	}
 	if (newProfileInfo["phone"]) {
 	    updateObj["phone"] = newProfileInfo["phone"];
+	}
+	if (newProfileInfo["profilePicture"]) {
+	    updateObj["profilePicture"] = newProfileInfo["profilePicture"];
 	}
 
 	var currentName = req.cookies.currentAccount;

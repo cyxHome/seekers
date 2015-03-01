@@ -48,24 +48,31 @@ exports.gotoEditMypost = function(req, res){
  */
 exports.changeImg = function(req,res){
     // get rid of the /public (cased by the setting of the staic path in app.js)
-    var imgPath = req.files.userPhoto.path.substring(7);
-    var updateObj = {"imageURL": imgPath};
+    
+    if (req.files.userPhoto === undefined)
+    {
+    	res.redirect('/account-mypost');
+    }
+    else
+    {
+    	var imgPath = req.files.userPhoto.path.substring(7);
+	    var updateObj = {"imageURL": imgPath};
 
-    console.log("item_id: "+item_id);
+	    console.log("item_id: "+item_id);
 
-    models.LostGallery 
-        .update({"_id": item_id}, updateObj, function () {
-        	console.log("change lost");
-          // jump to the account-mypost page
-          res.render('account-mypost', 1);
-      });
+	    models.LostGallery 
+	        .update({"_id": item_id}, updateObj, function () {
+				// go to check  (for some reason, the redirect below always execute, so we have to comment the following line)
+	          	// res.redirect('/account-mypost');
+	      });
 
-    models.FoundGallery 
-        .update({"_id": item_id}, updateObj, function () {
-        	console.log("change found");
-          // jump to the account-mypost page
-          res.render('account-mypost', 1);
-      });
+	    models.FoundGallery 
+	        .update({"_id": item_id}, updateObj, function () {
+	          	// go to check
+	          	res.redirect('/account-mypost');
+	      });
+    }
+
 }
 
 
@@ -79,12 +86,15 @@ exports.editMypost = function(req, res){
 	var itemID = req.params.id;
 
 	// Build up update object programmatically to not include 'title'/'location' when not provided:
-	var updateObj = {"description": newItemInfo["description"], "imageURL": newItemInfo["imageURL"]};
+	var updateObj = {"description": newItemInfo["description"]};
 	if (newItemInfo["title"]) {
 	    updateObj["title"] = newItemInfo["title"];
 	}
 	if (newItemInfo["location"]) {
 	    updateObj["location"] = newItemInfo["location"];
+	}
+	if (newItemInfo["imageURL"]) {
+	    updateObj["imageURL"] = newItemInfo["imageURL"];
 	}
 
 	// either Lost Gallery or Found Gallery will have the item that has the specific id

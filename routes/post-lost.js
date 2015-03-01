@@ -11,25 +11,34 @@ var models = require('../models');
  * change the image URL to the URL just set up
  */
 exports.changeImg = function(req,res){
-    var currentName = req.cookies.currentAccount;
-    // get rid of the /public (cased by the setting of the staic path in app.js)
-    var imgPath = req.files.userPhoto.path.substring(7);;
-    var updateObj = {"imageURL": imgPath};
 
-    models.LostGallery
-    .find({"author": currentName})
-    .sort('-date')
-    .exec(afterQuery);
 
-  function afterQuery(err, items) {
-    var itemID = items[0]._id;
+    if (req.files.userPhoto === undefined)
+    {
+        res.redirect('/logined-lost');
+    }
+    else
+    {
+        var currentName = req.cookies.currentAccount;
+        // get rid of the /public (cased by the setting of the staic path in app.js)
+        var imgPath = req.files.userPhoto.path.substring(7);;
+        var updateObj = {"imageURL": imgPath};
 
-    models.LostGallery // display the updated data in the database
-        .update({"_id": itemID}, updateObj, function () {
-          // jump to the post-lost page
-          res.render('post-lost', 1);
-      });
-  }
+        models.LostGallery
+        .find({"author": currentName})
+        .sort('-date')
+        .exec(afterQuery);
+
+        function afterQuery(err, items) {
+        var itemID = items[0]._id;
+
+        models.LostGallery // display the updated data in the database
+            .update({"_id": itemID}, updateObj, function () {
+                // go to check 
+                res.redirect('/logined-lost');
+          });
+        }
+    }
 
 }
 

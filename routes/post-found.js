@@ -7,40 +7,37 @@ exports.view = function(req, res){
 };
 
 
-
 /**
  * change the image URL to the URL just set up
  */
 exports.changeImg = function(req,res){
-    var currentName = req.cookies.currentAccount;
-    // get rid of the /public (cased by the setting of the staic path in app.js)
-    var imgPath = req.files.userPhoto.path.substring(7);;
-    var updateObj = {"imageURL": imgPath};
+    if (req.files.userPhoto === undefined)
+    {
+        res.redirect('/logined-found');
+    }
+    else
+    {
+      var currentName = req.cookies.currentAccount;
+      // get rid of the /public (cased by the setting of the staic path in app.js)
+      var imgPath = req.files.userPhoto.path.substring(7);;
+      var updateObj = {"imageURL": imgPath};
 
-    models.FoundGallery
-    .find({"author": currentName})
-    .sort('-date')
-    .exec(afterQuery);
+      models.FoundGallery
+      .find({"author": currentName})
+      .sort('-date')
+      .exec(afterQuery);
 
-  function afterQuery(err, items) {
-    var itemID = items[0]._id;
+      function afterQuery(err, items) {
+      var itemID = items[0]._id;
 
-    models.FoundGallery // display the updated data in the database
-        .update({"_id": itemID}, updateObj, function (err,items) {
-          // jump to the post-lost page
-          // models.FoundGallery
-          //   .find()
-          //   .sort('date')
-          //   .exec(renderItems);
-          res.redirect('/logined-found');
+      models.FoundGallery // display the updated data in the database
+          .update({"_id": itemID}, updateObj, function (err,items) {
+            // go to see the posted found items
+            res.redirect('/logined-found');
 
-          // function renderItems(err, items) {
-          //   // console.log(projects); 
-          //   res.render('logined-found', { 'found-items': items });
-          // }
-          // res.render('post-found', 1);
-      });
-  }
+        });
+      }
+    }
 
 }
 

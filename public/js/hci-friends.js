@@ -56,8 +56,8 @@ function initializePage() {
 		$.post('/post-found/new', json, function() {
 			// if successfully post, the current user add a new post 
 			$.post('/edit-profile/postNumberPlusOne', function () { 
-				// redirect to found gallery (logined-found.handlebars)
-				window.location.href = '/logined-found'; 
+				// redirect to found gallery in the server (post-found.js)
+				// window.location.href = '/logined-found'; 
 			});
 		});
 	});
@@ -90,8 +90,8 @@ function initializePage() {
 		$.post('/post-lost/new', json, function() { 
 			// if successfully post, the current user add a new post 
 			$.post('/edit-profile/postNumberPlusOne', function () { 
-				// redirect to lost gallery (logined-lost.handlebars)
-				window.location.href = '/logined-lost';  
+				// redirect to lost gallery in the server (post-lost.js)
+				// window.location.href = '/logined-lost';  
 			});
 		});
 	});
@@ -205,8 +205,8 @@ function initializePage() {
 		};
 
 		$.post('/edit-profile', {json: json} , function() {
-			// redirect to the profile page for user to check
-			window.location.href = '/account-profile';  
+			// redirect to the profile page in the server (account-profile-edit.js)
+			// window.location.href = '/account-profile';  
 		});
 
 	});
@@ -277,8 +277,8 @@ function initializePage() {
 		};
 
 		$.post('/myPost/'+idNumber+'/edit', {json: json}, function() {
-			// redirect to check my post
-			window.location.href = '/account-mypost'; 
+			// redirect to check my post (in the server account-mypost.js)
+			// window.location.href = '/account-mypost'; 
 		});
 
 	});
