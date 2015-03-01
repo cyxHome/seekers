@@ -144,22 +144,30 @@ function initializePage() {
 		 */
 		function passwordCheck(account_json) {
 			var accountPassword = account_json['password'];
-			console.log("accountPassword: " + accountPassword);
-			if (accountPassword !== inputPassword)
+			// console.log("accountPassword: " + accountPassword);
+			console.log("cookie:  " + document.cookie);
+			console.log("currentAccount:  " +  typeof document.cookie.currentAccount);
+			if (typeof document.cookie.currentAccount !== "undefined")
+			{
+				alert("you have already logined to an account, please logout first");
+			}
+			else if (accountPassword !== inputPassword)
 			{
 				passwordNotMatch();
 				return;
-			}	
+			}
 			else
 			{   // successfully logined, change the current accoun
 				alert("welcome back " + account_json["name"] + "!");
 
-				localforage.setItem('currentAccount', account_json['name'], function(err, value) {
-    				// Do other things once the value has been saved.
-    				console.log("currentAccount: "+value);
-				});
+				// localforage.setItem('currentAccount', account_json['name'], function(err, value) {
+    // 				// Do other things once the value has been saved.
+    // 				console.log("currentAccount: "+value);
+				// });
 
-				$.post('/account/save-current', {name: account_json["name"]}, function() {});
+				document.cookie = "currentAccount = " + account_json['name'] + ";";
+
+				// $.post('/account/save-current', {name: account_json["name"]}, function() {});
 
 				// redirect the page to logined page
 				window.location.href = '/logined-index'; 
@@ -340,7 +348,7 @@ function initializePage() {
 		{   // post the item to search and display all the related items in the lost gallery
 			$.post('/search-post/lost', { item: searchLost }, function() { 
 				// redirect to lost gallery (logined-lost.handlebars)
-				window.location.href = '/search-post';  
+				window.location.href = '/search-post-alternative';  
 			});
 		}
 		else 
@@ -361,6 +369,24 @@ function initializePage() {
 		seeProfileNeedLogin();
 	});
 
+	/**
+	 * A/B test: tracking the back button for search in version_a 
+	 */
+	$(".version_a").click(function() {
+		woopra.track("a_version_search_back_click", {}, function () {
+			window.location.href = '/logined-index';  
+		});
+	});
+
+	/**
+	 * A/B test: tracking the back button for search in version_b 
+	 */
+	$(".version_b").click(function() {
+		woopra.track("b_version_search_back_click", {}, function () {
+			window.location.href = '/logined-index-alternative';  
+		});
+	});
+
 
 }
 
@@ -373,7 +399,7 @@ function initializePage() {
  */
 function goBack() {
 	console.log('clicked goBackButton');
- 	window.history.back()
+ 	window.history.back();
 }
 
 function passwordNotMatch() {
@@ -397,5 +423,6 @@ function seeProfileNeedLogin() {
 }
 
 function logoutSuccess() {
+	document.cookie = "currentAccount = " + " " + ";";
 	alert("You have logout");
 }

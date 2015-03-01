@@ -4,19 +4,30 @@ var models = require('../models');
 var itemToDisplay;
 var noMatchLastSearch;
 
+/**
+ * Render different version of page (the back button in the two version of pages is tracked by different listener)
+ *  based on the page version
+ */
 exports.view = function(req, res){
-	
-
-  	if (noMatchLastSearch === 0)
-		res.render('search-post', { 'search-items': itemToDisplay });
+	console.log(req.cookies.pageVersion);
+	if (req.cookies.pageVersion === "1")
+	{
+		if (noMatchLastSearch === 0)
+			res.render('search-post', { 'search-items': itemToDisplay });
+		else
+			res.render('search-post', { 'no-result': { "name" : "no match item post, try another keyword or check it in the Lost/Found Gallery" } });
+	}
+	else if (req.cookies.pageVersion === "2")
+	{
+		if (noMatchLastSearch === 0)
+			res.render('search-post-alternative', { 'search-items': itemToDisplay });
+		else
+			res.render('search-post-alternative', { 'no-result': { "name" : "no match item post, try another keyword or check it in the Lost/Found Gallery" } });
+	}
 	else
-		res.render('search-post', { 'no-result': { "name" : "no match item post, try another keyword or check it in the Lost/Found Gallery" } });
-
-	  
-
-
-	
-
+	{
+		console.log("Page Version is not set properly when visiting the search post page");
+	}
 };
 
 exports.searchForFoundItems = function(req, res) {

@@ -6,10 +6,12 @@ var models = require('../models');
  * This function is called everytime when the edit-profile page is loaded
  */
 exports.view = function(req, res) {
-	models.CurrentAccount // get the current account from the database
-		.find({"id": 1},{"name": 1, "_id": 0}, function (err, docs) { 
-			var currentAccountArr = docs.map(function(d){ return d.toObject() });
-			var currentName = currentAccountArr[0].name;
+	// models.CurrentAccount // get the current account from the database
+	// 	.find({"id": 1},{"name": 1, "_id": 0}, function (err, docs) { 
+	// 		var currentAccountArr = docs.map(function(d){ return d.toObject() });
+	// 		var currentName = currentAccountArr[0].name;
+
+	var currentName = req.cookies.currentAccount;
 
 			models.AccountProfile // get the profile information asociated with the name
 				.find({"name": currentName})
@@ -17,7 +19,7 @@ exports.view = function(req, res) {
 					console.log(oldProfile);
 					res.render('account-profile-edit', { 'old-profile': oldProfile });
 				});
-		});
+		// });
 }
 
 
@@ -37,10 +39,12 @@ exports.editProfile = function(req, res) {
 	    updateObj["phone"] = newProfileInfo["phone"];
 	}
 
-	models.CurrentAccount // get the current account from the database
-		.find({"id": 1},{"name": 1, "_id": 0}, function (err, docs) { 
-			var currentAccountArr = docs.map(function(d){ return d.toObject() });
-			var currentName = currentAccountArr[0].name;
+	// models.CurrentAccount // get the current account from the database
+	// 	.find({"id": 1},{"name": 1, "_id": 0}, function (err, docs) { 
+	// 		var currentAccountArr = docs.map(function(d){ return d.toObject() });
+	// 		var currentName = currentAccountArr[0].name;
+
+	var currentName = req.cookies.currentAccount;
 
 			models.AccountProfile // update the profile in the database
 				.update({"name": currentName}, updateObj, function () {
@@ -49,7 +53,7 @@ exports.editProfile = function(req, res) {
 				.find({"name": currentName})
 				.exec(displayChangedProfile);
 			});
-		});				
+		// });				
 
 
 	function displayChangedProfile (err, profile) {
@@ -63,10 +67,12 @@ exports.editProfile = function(req, res) {
  * the post number of the user add one
  */
 exports.postPlusOne = function(req, res) {
-	models.CurrentAccount // get the current account from the database
-		.find({"id": 1},{"name": 1, "_id": 0}, function (err, docs) { 
-			var currentAccountArr = docs.map(function(d){ return d.toObject() });
-			var currentName = currentAccountArr[0].name;
+	// models.CurrentAccount // get the current account from the database
+	// 	.find({"id": 1},{"name": 1, "_id": 0}, function (err, docs) { 
+	// 		var currentAccountArr = docs.map(function(d){ return d.toObject() });
+	// 		var currentName = currentAccountArr[0].name;
+
+	var currentName = req.cookies.currentAccount;
 
 			models.AccountProfile // get the postNumber from the database
 				.find({"name": currentName}, function (err, docs) { 
@@ -79,7 +85,7 @@ exports.postPlusOne = function(req, res) {
 						.exec(displayChangedProfile);
 					});
 				});	
-		});	
+		// });	
 
 	function displayChangedProfile (err, profile) {
 		console.log("new profile: "+ profile); 
@@ -92,10 +98,12 @@ exports.postPlusOne = function(req, res) {
  * the post number of the user add one
  */
 exports.postMinusOne = function(req, res) {
-	models.CurrentAccount // get the current account from the database
-		.find({"id": 1},{"name": 1, "_id": 0}, function (err, docs) { 
-			var currentAccountArr = docs.map(function(d){ return d.toObject() });
-			var currentName = currentAccountArr[0].name;
+	// models.CurrentAccount // get the current account from the database
+	// 	.find({"id": 1},{"name": 1, "_id": 0}, function (err, docs) { 
+	// 		var currentAccountArr = docs.map(function(d){ return d.toObject() });
+	// 		var currentName = currentAccountArr[0].name;
+
+	var currentName = req.cookies.currentAccount;
 
 			models.AccountProfile // get the postNumber from the database
 				.find({"name": currentName}, function (err, docs) { 
@@ -108,7 +116,7 @@ exports.postMinusOne = function(req, res) {
 						.exec(displayChangedProfile);
 					});
 				});	
-		});	
+		// });	
 
 	function displayChangedProfile (err, profile) {
 		console.log("new profile: "+ profile); 

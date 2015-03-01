@@ -25,24 +25,24 @@ exports.findAccount = function(req, res) { 
 /** 
  * Save the current account to database after the user has logined
  */
-exports.saveCurrentAccount = function(req, res) {
+// exports.saveCurrentAccount = function(req, res) {
 
-  var form_data = req.body;
-  var currentName = form_data['name'];
+//   var form_data = req.body;
+//   var currentName = form_data['name'];
 
-  models.CurrentAccount // update the current account profile,
-    .update({"id": 1}, {"name": currentName}, function () {
-    console.log("updata: "+currentName);
+//   models.CurrentAccount // update the current account profile,
+//     .update({"id": 1}, {"name": currentName}, function () {
+//     console.log("updata: "+currentName);
 
-    models.CurrentAccount // call back function display the updated current account to the terminal
-      .find({"id": 1})
-      .exec(function (err, currentAccount) {
-        console.log("updated new currentAccount: " + currentAccount);
-        res.send("OK");
-      });
-    });
+//     models.CurrentAccount // call back function display the updated current account to the terminal
+//       .find({"id": 1})
+//       .exec(function (err, currentAccount) {
+//         console.log("updated new currentAccount: " + currentAccount);
+//         res.send("OK");
+//       });
+//     });
 
-}
+// }
 
 
 /**

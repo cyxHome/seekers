@@ -88,6 +88,7 @@ app.get('/account-profile-edit', accountprofileedit.view);
 app.get('/account-mypost-edit', accountmypostedit.view);
 app.get('/others-profile', othersprofile.view);
 app.get('/search-post', searchpost.view);
+app.get('/search-post-alternative', searchpost.view);
 // app.get('/back', function(req, res){
 // 	res.redirect('back');
 // });
@@ -99,7 +100,7 @@ app.post('/post-lost/new', postlost.addLostItem);
 app.post('/edit-profile', accountprofileedit.editProfile);
 app.post('/account/login', account.findAccount);
 app.post('/account/sign-up-name-check', account.nameCheck);
-app.post('/account/save-current', account.saveCurrentAccount);
+// app.post('/account/save-current', account.saveCurrentAccount);
 app.post('/myPost/:id/delete', accountmypost.deleteItem);
 app.post('/myPost/:id/gotoEdit', accountmypostedit.gotoEditMypost);
 app.post('/myPost/:id/edit', accountmypostedit.editMypost);
