@@ -145,9 +145,8 @@ function initializePage() {
 		function passwordCheck(account_json) {
 			var accountPassword = account_json['password'];
 			// console.log("accountPassword: " + accountPassword);
-			console.log("cookie:  " + document.cookie);
-			console.log("currentAccount:  " +  typeof document.cookie.currentAccount);
-			if (typeof document.cookie.currentAccount !== "undefined")
+			var currentAccount = getCookie("currentAccount");
+			if (currentAccount !== "")
 			{
 				alert("you have already logined to an account, please logout first");
 			}
@@ -425,4 +424,15 @@ function seeProfileNeedLogin() {
 function logoutSuccess() {
 	document.cookie = "currentAccount = " + " " + ";";
 	alert("You have logout");
+}
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0; i<ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1);
+        if (c.indexOf(name) == 0) return c.substring(name.length,c.length);
+    }
+    return "";
 }
