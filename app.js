@@ -134,6 +134,8 @@ app.get('/search-post-alternative', searchpost.view);
 app.post('/api/photo/lost', postlost.changeImg);
 app.post('/api/photo/found', postfound.changeImg);
 app.post('/api/photo/profile', accountprofileedit.changeImg);
+app.post('/api/photo/editpost', accountmypostedit.changeImg);
+
 
 app.post('/account/new', account.addAccount);
 app.post('/post-found/new', postfound.addFoundItem);

@@ -50,7 +50,7 @@ function initializePage() {
 			"time": currentTime,
 			"location": location,
 			"description": description,
-			"verification": verification,
+			"verification": "not used",
 			"imageURL": image_url
 		};
 		$.post('/post-found/new', json, function() {
@@ -169,14 +169,7 @@ function initializePage() {
 			{   // successfully logined, change the current accoun
 				alert("welcome back " + account_json["name"] + "!");
 
-				// localforage.setItem('currentAccount', account_json['name'], function(err, value) {
-    // 				// Do other things once the value has been saved.
-    // 				console.log("currentAccount: "+value);
-				// });
-
 				document.cookie = "currentAccount = " + account_json['name'] + ";";
-
-				// $.post('/account/save-current', {name: account_json["name"]}, function() {});
 
 				// redirect the page to logined page
 				window.location.href = '/logined-index'; 
@@ -433,7 +426,7 @@ function seeProfileNeedLogin() {
 
 function logoutSuccess() {
 	document.cookie = "currentAccount = " + " " + ";";
-	alert("You have logout");
+	// alert("You have logout");
 }
 
 function getCookie(cname) {

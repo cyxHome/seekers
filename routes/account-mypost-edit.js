@@ -42,6 +42,33 @@ exports.gotoEditMypost = function(req, res){
 	
 };
 
+
+/**
+ * change the image URL to the URL just set up
+ */
+exports.changeImg = function(req,res){
+    // get rid of the /public (cased by the setting of the staic path in app.js)
+    var imgPath = req.files.userPhoto.path.substring(7);
+    var updateObj = {"imageURL": imgPath};
+
+    console.log("item_id: "+item_id);
+
+    models.LostGallery 
+        .update({"_id": item_id}, updateObj, function () {
+        	console.log("change lost");
+          // jump to the account-mypost page
+          res.render('account-mypost', 1);
+      });
+
+    models.FoundGallery 
+        .update({"_id": item_id}, updateObj, function () {
+        	console.log("change found");
+          // jump to the account-mypost page
+          res.render('account-mypost', 1);
+      });
+}
+
+
 /**
  * Update the posted item
  */

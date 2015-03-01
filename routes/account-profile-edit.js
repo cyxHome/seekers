@@ -6,10 +6,6 @@ var models = require('../models');
  * This function is called everytime when the edit-profile page is loaded
  */
 exports.view = function(req, res) {
-	// models.CurrentAccount // get the current account from the database
-	// 	.find({"id": 1},{"name": 1, "_id": 0}, function (err, docs) { 
-	// 		var currentAccountArr = docs.map(function(d){ return d.toObject() });
-	// 		var currentName = currentAccountArr[0].name;
 
 	var currentName = req.cookies.currentAccount;
 
@@ -19,7 +15,6 @@ exports.view = function(req, res) {
 					console.log(oldProfile);
 					res.render('account-profile-edit', { 'old-profile': oldProfile });
 				});
-		// });
 }
 
 /**
@@ -35,10 +30,8 @@ exports.changeImg = function(req,res){
 
     models.AccountProfile // display the updated data in the database
         .update({"name": currentName}, updateObj, function () {
-			res.send("profile OK");
+			res.render('account-profile', 1);
       });
-
-
 }
 
 
@@ -58,11 +51,6 @@ exports.editProfile = function(req, res) {
 	    updateObj["phone"] = newProfileInfo["phone"];
 	}
 
-	// models.CurrentAccount // get the current account from the database
-	// 	.find({"id": 1},{"name": 1, "_id": 0}, function (err, docs) { 
-	// 		var currentAccountArr = docs.map(function(d){ return d.toObject() });
-	// 		var currentName = currentAccountArr[0].name;
-
 	var currentName = req.cookies.currentAccount;
 
 			models.AccountProfile // update the profile in the database
@@ -71,9 +59,7 @@ exports.editProfile = function(req, res) {
 			models.AccountProfile // display the updated data in the database
 				.find({"name": currentName})
 				.exec(displayChangedProfile);
-			});
-		// });				
-
+			});			
 
 	function displayChangedProfile (err, profile) {
 		console.log("new profile: "+ profile); 
@@ -86,25 +72,20 @@ exports.editProfile = function(req, res) {
  * the post number of the user add one
  */
 exports.postPlusOne = function(req, res) {
-	// models.CurrentAccount // get the current account from the database
-	// 	.find({"id": 1},{"name": 1, "_id": 0}, function (err, docs) { 
-	// 		var currentAccountArr = docs.map(function(d){ return d.toObject() });
-	// 		var currentName = currentAccountArr[0].name;
 
 	var currentName = req.cookies.currentAccount;
 
-			models.AccountProfile // get the postNumber from the database
-				.find({"name": currentName}, function (err, docs) { 
-				var currentProfileArr = docs.map(function(d){ return d.toObject() });
-				var oldpostNumber = currentProfileArr[0].postNumber;
-				models.AccountProfile // update the profile in the database
-					.update({"name": currentName}, { "postNumber": oldpostNumber+1}, function () {
-						models.AccountProfile // display the updated data in the database
-						.find({"name": currentName})
-						.exec(displayChangedProfile);
-					});
-				});	
-		// });	
+		models.AccountProfile // get the postNumber from the database
+			.find({"name": currentName}, function (err, docs) { 
+			var currentProfileArr = docs.map(function(d){ return d.toObject() });
+			var oldpostNumber = currentProfileArr[0].postNumber;
+			models.AccountProfile // update the profile in the database
+				.update({"name": currentName}, { "postNumber": oldpostNumber+1}, function () {
+					models.AccountProfile // display the updated data in the database
+					.find({"name": currentName})
+					.exec(displayChangedProfile);
+				});
+			});	
 
 	function displayChangedProfile (err, profile) {
 		console.log("new profile: "+ profile); 
@@ -117,10 +98,6 @@ exports.postPlusOne = function(req, res) {
  * the post number of the user add one
  */
 exports.postMinusOne = function(req, res) {
-	// models.CurrentAccount // get the current account from the database
-	// 	.find({"id": 1},{"name": 1, "_id": 0}, function (err, docs) { 
-	// 		var currentAccountArr = docs.map(function(d){ return d.toObject() });
-	// 		var currentName = currentAccountArr[0].name;
 
 	var currentName = req.cookies.currentAccount;
 
@@ -135,7 +112,6 @@ exports.postMinusOne = function(req, res) {
 						.exec(displayChangedProfile);
 					});
 				});	
-		// });	
 
 	function displayChangedProfile (err, profile) {
 		console.log("new profile: "+ profile); 
