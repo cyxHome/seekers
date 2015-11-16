@@ -9,7 +9,7 @@ var multer  = require('multer');
 var http = require('http');
 var path = require('path');
 var handlebars = require('express3-handlebars');
-var mongoose = require('mongoose');
+// var mongoose = require('mongoose');
 
 var index = require('./routes/index');
 var account = require('./routes/account');
@@ -39,10 +39,10 @@ var searchpost = require('./routes/search-post');
 
 // Connect to the Mongo database, whether locally or on Heroku
 // MAKE SURE TO CHANGE THE NAME FROM 'lab7' TO ... IN OTHER PROJECTS
-var local_database_name = 'seeker';
-var local_database_uri  = 'mongodb://localhost/' + local_database_name;
-var database_uri = process.env.MONGOLAB_URI || local_database_uri;
-mongoose.connect(database_uri);
+// var local_database_name = 'seeker';
+// var local_database_uri  = 'mongodb://localhost/' + local_database_name;
+// var database_uri = process.env.MONGOLAB_URI || local_database_uri;
+// mongoose.connect(database_uri);
 
 var app = express();
 
