@@ -29,7 +29,7 @@ var accountprofileedit = require('./routes/account-profile-edit');
 var accountmessage = require('./routes/account-message');
 var othersprofile = require('./routes/others-profile');
 var searchpost = require('./routes/search-post');
-
+// var methodOverride = require('method-override');
 
 
 
@@ -57,10 +57,10 @@ app.use(express.favicon());
 app.use(express.logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded());
-app.use(express.methodOverride());
+// app.use(express.methodOverride());
 app.use(express.cookieParser('Intro HCI secret key'));
 // app.use(express.bodyParser());
-app.use(express.session());
+// app.use(express.session());
 
 /*Configure the multer.*/
 
